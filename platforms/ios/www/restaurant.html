@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>VIPBite</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script type="text/javascript" src="//use.typekit.net/zrr2vfn.js"></script>
+		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+		<!-- Importing .css file -->
+		<link href="css/bootstrap.min.css"		rel="stylesheet" type="text/css">
+		<link href="css/style.css"						rel="stylesheet" type="text/css">
+		<link href="css/buttons.css"					rel="stylesheet" type="text/css">
+		<link href="css/type.css"							rel="stylesheet" type="text/css">
+		<link href="css/add2home.css"					rel="stylesheet" type="text/css">
+		<link href="css/flexslider.css"				rel="stylesheet" type="text/css">
+		<link href="css/photoswipe.css"				rel="stylesheet" type="text/css">
+
+		<!-- Importing .js file -->
+		<script type="text/javascript" src="script/jquery.js"></script>
+		<script type="text/javascript" src="script/jquery.flexslider-min.js"/></script>
+		<script type="text/javascript" src="script/jquery.nivo.slider.pack.js"></script>
+		<script type="text/javascript" src="script/custom.js"></script>
+		<script type="text/javascript" src="script/bootstrap.js"></script>
+		<script type="text/javascript" src="script/VIPBite_API.js"></script>
+		<script type="text/javascript" src="phonegap.js"></script>
+	</head>
+
+	<body id="VIPBiteMobile_BodyContent">
+		<!-- Static Header -->
+		<div id="VIPBiteMobile_StaticHeader" class="mainHeader">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12 center-align"><img src="content/image/logo.png" /></div>
+				</div>
+			</div>
+		</div>
+		<!-- End Header -->
+
+		<!-- Page Content -->
+		<div id="VIPBite_BodyContent">
+			<section class="contentWrap">
+			<div class="container">
+				<div class="row">
+					<h1 id="VIPBite_RestaurantName" class="smallHead">Restaurant Name</h1>
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="logoImg">
+							<img src="images/belgo.jpg" alt="" id="VIPBite_LogoImg" />
+							<ul id="VIPBite_RestaurantGallery" class="gallery">
+							</ul>
+						</div>
+						<div>
+						<!-- Nav tabs -->
+							<ul id="tabs" class="nav nav-pills" data-tabs="tabs">
+								<li class="active"><a href="#VIPBite_RestaurantDeal" data-toggle="tab">VIPbite Deal</a></li>
+								<li><a href="#VIPBite_RestaurantInfo" data-toggle="tab">Information</a></li>
+								<li><a href="#VIPBite_RestaurantContact" data-toggle="tab">Contact</a></li>
+							</ul>
+
+							<!-- Tab panes -->
+							<div class="tab-content">
+								<div class="tab-pane active" id="VIPBite_RestaurantDeal">
+									<ul class="list-group push-top">
+										<li class="list-group-item">
+											<strong>Current VIPBite Deal:</strong><br/>
+											<p id="VIPBite_DealContent">DEAL CONTENT GOES HERE!</p>
+										</li>
+										<li class="list-group-item">
+											<a href="https://twitter.com/share" class="twitter-share-button" data-lang="en">Tweet</a>
+											<p id="VIPBite_UrbanspoonContent">[--Urbanspoon Rating Goes Here--]</p>
+										</li>
+									</ul>
+								</div>
+								<div class="tab-pane" id="VIPBite_RestaurantInfo">
+									<ul class="list-group push-top">
+										<li class="list-group-item">
+											<strong>Cuisine Type:</strong><br/>
+											<p id="VIPBite_CuisineType">Cuisine Type</p>
+										</li>
+										<li class="list-group-item">
+											<strong>Description:</strong><br/>
+											<p id="VIPBite_RestaurantDescription">Description Content</p>
+										</li>
+									</ul>
+								</div>
+								<div class="tab-pane" id="VIPBite_RestaurantContact">
+									<ul class="list-group push-top">
+										<li class="list-group-item">
+											<strong>Phone Number:</strong><br/>
+											<p id="VIPBite_PhoneNumber">[--Number Goes Here--]</p>
+										</li>
+										<li class="list-group-item">
+											<strong>Service Hour:</strong><br/>
+											<p id="VIPBite_OperatingHour">[--Hour Goes Here--]</p>
+										</li>
+										<li class="list-group-item">
+											<strong>Reservation Detail:</strong><br/>
+											<p id="VIPBite_ReservationInfo">[--Reservation Goes Here--]</p>
+										</li>
+										<li class="list-group-item">
+											<strong>Restaurant Address:</strong><br/>
+											<p id="VIPBite_RestaurantAddress">[--Address Goes Here--]</p>
+										</li>
+										<li class="list-group-item">
+											<strong>Web Site:</strong><br/>
+											<p id="VIPBite_WebSite">[--website Goes Here--]</p>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+		<!-- End Content -->
+
+		<!-- Static Footer -->
+		<div id="VIPBite_NavigationMenu" class="navigation">
+			<a href="index.html">
+				<img src="content/image/nav/home.png"/><en class="under-icon-text">Home</en>
+			</a>
+			<a href="browse.html">
+				<img src="content/image/nav/browse.png"/><en class="under-icon-text">Browse</en>
+			</a>
+			<a href="map.html">
+				<img src="content/image/nav/map.png"/><en class="under-icon-text">Map</en>
+			</a>
+			<a href="account.html">
+				<img src="content/image/nav/account.png"/><en class="under-icon-text">My VipBite</en>
+			</a>
+			<a href="more.html">
+				<img src="content/image/nav/more.png"/><en class="under-icon-text">More</en>
+			</a>
+		</div>
+		<!-- End Footer -->
+	</body>
+
+	<!-- Page's JavaScript section used for handle user interaction -->
+	<script>
+		$(document).ready(VIPBiteAPI.GetRestaurantInfo());
+	</script>
+</html>
