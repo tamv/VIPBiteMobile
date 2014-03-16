@@ -244,7 +244,7 @@ VIPBiteAPI = function($, window, document) {
 		hrefElement.setAttribute('class', 'list-group-item');
 
 		var strContent =	"<div class='fLeft'><img src='"
-											+ imgurl + "/restaurant_logo/" + content.imageUrl
+											+ imgurl + content.imageUrl
 											+ "'class='searchImg'/></div>"
 											+ "<div class='fLeft'>"
 											+ "<h3 id='restName' class='list-group-item-heading'>"
