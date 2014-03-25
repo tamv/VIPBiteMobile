@@ -31,6 +31,27 @@
     font-style: normal;
 }
 
+.imageGallery{
+	overflow: hidden;
+	max-height: 120px;
+}
+
+.imgList {
+	width: 16%;
+	height: 100%;
+	position: relative;
+	padding-right: 5px;
+	padding-left: 5px;
+	float: left;
+}
+
+.imageItem{
+	width:100%;
+	overflow:hidden;
+	height:120px;
+	text-align:center;
+}
+
 .contentWrap{
 	background: url(../content/images/trans.png) repeat;
 	margin-bottom:60px;
@@ -550,7 +571,7 @@ select{
 
 	.google_map
 	{
-		min-height: 500px;
+		min-height: 400px;
 		padding: 10px;
 		overflow: hidden;
 	}

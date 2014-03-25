@@ -13,16 +13,16 @@
 		<link href="css/style.css"						rel="stylesheet" type="text/css">
 		<link href="css/buttons.css"					rel="stylesheet" type="text/css">
 		<link href="css/type.css"							rel="stylesheet" type="text/css">
-		<link href="css/add2home.css"					rel="stylesheet" type="text/css">
 		<link href="css/flexslider.css"				rel="stylesheet" type="text/css">
-		<link href="css/photoswipe.css"				rel="stylesheet" type="text/css">
+		<link href="css/nivo-lightbox.css"		rel="stylesheet" type="text/css">
+		<link href="css/theme.css"						rel="stylesheet" type="text/css">
 
 		<!-- Importing .js file -->
-		<script type="text/javascript" src="script/jquery.js"></script>
+		<script type="text/javascript" src="script/jquery-1.7.1.min.js"></script>
 		<script type="text/javascript" src="script/jquery.flexslider-min.js"/></script>
-		<script type="text/javascript" src="script/jquery.nivo.slider.pack.js"></script>
 		<script type="text/javascript" src="script/custom.js"></script>
 		<script type="text/javascript" src="script/bootstrap.js"></script>
+		<script type="text/javascript" src="script/nivo-lightbox.js"></script>
 		<script type="text/javascript" src="script/VIPBite_API.js"></script>
 		<script type="text/javascript" src="phonegap.js"></script>
 	</head>
@@ -49,9 +49,17 @@
 					<div class="col-sm-12">
 						<div class="logoImg">
 							<img src="images/belgo.jpg" alt="" id="VIPBite_LogoImg" />
-							<ul id="VIPBite_RestaurantGallery" class="gallery">
-							</ul>
 						</div>
+					</div>
+				</div>
+				<div class="row" style="margin-top:20px;">
+					<div class="col-sm-12">
+						<div id="VIPBite_RestaurantGallery" class="imageGallery">
+						</div>
+					</div>
+				</div>
+				<div class="row" style="margin-top:20px;">
+					<div lass="col-sm-12">
 						<div>
 						<!-- Nav tabs -->
 							<ul id="tabs" class="nav nav-pills" data-tabs="tabs">
@@ -90,11 +98,11 @@
 									<ul class="list-group push-top">
 										<li class="list-group-item">
 											<strong>Phone Number:</strong><br/>
-											<p id="VIPBite_PhoneNumber">[--Number Goes Here--]</p>
+											<p id="VIPBite_PhoneNumber">[--Number Goes Here--]</>
 										</li>
 										<li class="list-group-item">
 											<strong>Service Hour:</strong><br/>
-											<p id="VIPBite_OperatingHour">[--Hour Goes Here--]</p>
+											<p id="VIPBite_OperatingHour"></p>
 										</li>
 										<li class="list-group-item">
 											<strong>Reservation Detail:</strong><br/>
@@ -140,7 +148,9 @@
 	</body>
 
 	<!-- Page's JavaScript section used for handle user interaction -->
-	<script>
-		$(document).ready(VIPBiteAPI.GetRestaurantInfo());
+	<script type="text/javascript">
+		$(window).bind("load", function() {
+			VIPBiteAPI.GetRestaurantInfo();
+		});
 	</script>
 </html>

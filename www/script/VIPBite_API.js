@@ -2,16 +2,6 @@ var VIPBiteAPI = VIPBiteAPI || {};
 
 VIPBiteAPI = function($, window, document) {
 
-	function registerNewUser()
-	{
-		alert("REGISTERUSER");
-	};
-
-	function renewUser()
-	{
-		alert("RENEW USER");
-	};
-
 	function initializeGM()
 	{
 		var map_canvas = document.getElementById('VIPBite_GoogleMap');
@@ -42,24 +32,64 @@ VIPBiteAPI = function($, window, document) {
 
 		var searchMap = new mapsearchControl(searchMapDiv, map);
 		searchMapDiv.index = 10;
-		map.controls[google.maps.ControlPosition.TOP_CENTER].push(searchMapDiv);
+		map.controls[google.maps.ControlPosition.BOTTOM_CENTER].push(searchMapDiv);
+		google.maps.event.trigger(map, "resize");
 	};
 
-	function checkIsRenewOrRegister()
+	function registerNewUser()
 	{
-		var isLogin = JSON.parse(sessionStorage.getItem("UserLoginId"));
+		var urlpart = $("#VIPBite_RegisterForm").serializeArray();
+		var data = {}
 
-		if(isLogin)
-		{
-			$("#VIPBite_RegisterHeader").html("Renewal");
-			$("#firstName").val(isLogin.firstName);
-			$("#lastName").val(isLogin.lastName);
-			$("#email").val(isLogin.login);
-		}
-		else
-		{
-			$("#VIPBite_RegisterHeader").html("Renewal");
-		}
+		for (var i = 0; i < urlpart.length; i++) {
+			data[urlpart[i].name] = urlpart[i].value;
+		};
+
+		$.ajax({
+			url: "http://vipbite-deploy.herokuapp.com/mobile/register?method=post",
+			type: "POST",
+			dataType: "JSONP",
+			data: data,
+			success: function(data) {
+				$("#VIPBite_RegisterForm").hide();
+				$("#feedback_content").html(data.confirmation)
+
+				if(data.response == "success")
+				{ setTimeout(function() { window.location.href = "index.html"; }, 5000); }
+				else
+				{ setTimeout(function() { window.location.href = "register.html"; }, 7000); }
+			},
+		});
+	};
+
+	function renewUser()
+	{
+		var user = JSON.parse(sessionStorage.getItem("UserLoginId"));
+		$("#VIPBite_RenewForm").serializeArray();
+
+		var data = {}
+
+		for (var i = 0; i < urlpart.length; i++) {
+			data[urlpart[i].name] = urlpart[i].value;
+		};
+
+		data["id"] = user["userId"];
+
+		$.ajax({
+			url: "http://vipbite-deploy.herokuapp.com/mobile/renew?method=post",
+			type: "POST",
+			dataType: "JSONP",
+			data: data,
+			success: function(data) {
+				$("#VIPBite_RenewForm").hide();
+				$("#feedback_content").html(data.confirmation)
+
+				if(data.response == "success")
+				{ setTimeout(function() { window.location.href = "index.html"; }, 5000); }
+				else
+				{ setTimeout(function() { window.location.href = "renew.html"; }, 7000); }
+			},
+		});
 	};
 
 	function checkIsUserLogIn()
@@ -95,7 +125,7 @@ VIPBiteAPI = function($, window, document) {
 	function requestLogin()
 	{
 		$.ajax({
-			url: "http://localhost:3000/mobile/login",
+			url: "http://vipbite-deploy.herokuapp.com/mobile/login?method=post",
 			type: "POST",
 			dataType: "JSONP",
 			data: {username: $("#VIPBite_LoginUserName").val(), password: $("#VIPBite_LoginPwd").val()},
@@ -112,16 +142,18 @@ VIPBiteAPI = function($, window, document) {
 
 		$.ajax({
 			type: "POST",
-			url: "http://localhost:3000/mobile/browse",
+			url: "http://vipbite-deploy.herokuapp.com/mobile/browse",
 			dataType: "JSONP",
 			async: false,
 			data: {browseby: $("#VIPBite_BrowseInput").val()},
 			success: function(data) {
-				sessionStorage.setItem('RestaurantList', JSON.stringify(data.response));
 				sessionStorage.setItem('ImageLink', data.originalUri);
 
 				for(var i = 0; i < data.response.length; i++)
-				{ generateSearchResult(data.response[i], data.originalUri); }
+				{
+					generateSearchResult(data.response[i], data.originalUri);
+					sessionStorage.setItem(data.response[i].name, JSON.stringify(data.response[i]));
+				}
 			}
 		});
 
@@ -137,7 +169,7 @@ VIPBiteAPI = function($, window, document) {
 
 		$.ajax({
 			type: "POST",
-			url: "http://localhost:3000/mobile/map",
+			url: "http://vipbite-deploy.herokuapp.com/mobile/map",
 			dataType: "JSONP",
 			async: false,
 			data: { latitudeMax : maxLat,
@@ -166,40 +198,57 @@ VIPBiteAPI = function($, window, document) {
 
 		$.ajax({
 			type: "POST",
-			url: "http://localhost:3000/mobile/restaurantInfo",
+			url: "http://vipbite-deploy.herokuapp.com/mobile/restaurantInfo",
 			dataType: "JSONP",
-			data: { restaurantName: getInfo},
+			data: { name: getInfo},
 			success: function(data) {
 				if(data.response)
 				{
-					var imageLink = sessionStorage.getItem('ImageLink');
+					var imageLink = data.imageUri;
+
+					$("#VIPBite_RestaurantName").html(data.name);
+					document.getElementById("VIPBite_LogoImg").src = (imageLink + "/image/restaurant logo/" + data.logo);
 
 					for(var i = 0; i < data.images.length; i++)
 					{
-						var liElement = document.createElement("li");
+						var colElement = document.createElement("div");
+						colElement.setAttribute('class', 'imgList');
+
+						var divElement = document.createElement("div");
+						divElement.setAttribute('class', 'imageItem');
+
 						var hrefElement = document.createElement("a");
 						var imgElement = document.createElement("img");
 						hrefElement.setAttribute('href', (imageLink + data.images[i]));
+						hrefElement.setAttribute('data-lightbox-gallery', "gallery1");
+						hrefElement.setAttribute('class', 'imageGal');
+
 						imgElement.setAttribute('src', (imageLink + data.images[i]));
+						imgElement.setAttribute('height', '100%');
 						imgElement.setAttribute('alt', "Gallery");
 
 						hrefElement.appendChild(imgElement);
-						liElement.appendChild(hrefElement);
+						divElement.appendChild(hrefElement);
+						colElement.appendChild(divElement);
 
-						$("#VIPBite_RestaurantGallery").append(liElement);
+						$("#VIPBite_RestaurantGallery").append(colElement);
 					};
 
-					$("#VIPBite_RestaurantName").html(data.overview.restaurantname);
-					$("#VIPBite_DealContent").html(data.info.promo + data.info.promoDetail);
-					$("#VIPBite_UrbanspoonContent").html(data.info.urbanspoonreview);
-					$("#VIPBite_CuisineType").html(data.overview.tags);
-					$("#VIPBite_RestaurantDescription").html(data.info.comment);
-					$("#VIPBite_PhoneNumber").html(data.overview.phone);
-					$("#VIPBite_OperatingHour").html(data.info.operatinghour);
-					$("#VIPBite_RestaurantAddress").html(data.overview.address);
-					$("#VIPBite_ReservationInfo").html(data.info.reservation);
+					$("#VIPBite_DealContent").html(data.dealDetail);
+					$("#VIPBite_UrbanspoonContent").html(data.rate);
+					$("#VIPBite_CuisineType").html(data.cuisineType);
+					$("#VIPBite_RestaurantDescription").html(data.comment);
+					$("#VIPBite_PhoneNumber").html(data.phone);
+					$("#VIPBite_ReservationInfo").html(data.reservation);
+					for(var i = 0; i < data.hour.length; i++)
+					{
+						$("#VIPBite_OperatingHour").append(data.hour[i]);
+						$("#VIPBite_OperatingHour").append('<br/>');
+					}
+					$("#VIPBite_RestaurantAddress").html(data.address.toString());
+					$("#VIPBite_WebSite").html(data.web);
 
-					document.getElementById("VIPBite_LogoImg").src = (imageLink + "/restaurant_logo/" + data.overview.imageUrl);
+					$('.imageGal').nivoLightbox({ effect: 'fade' });
 				}
 			}
 		});
@@ -212,12 +261,12 @@ VIPBiteAPI = function($, window, document) {
 		var controlText = document.createElement('div');
 
 		controlText.style.fontFamily = 'Arial,sans-serif';
-		controlText.style.fontSize = '12px';
-		controlText.style.paddingLeft = '4px';
-		controlText.style.paddingRight = '4px';
+		controlText.style.fontSize = '10px';
+		controlText.style.paddingLeft = '5px';
+		controlText.style.paddingRight = '5px';
 		controlText.innerHTML = '<b>Search</b>';
 
-		controlUI.style.backgroundColor = 'white';
+		controlUI.setAttribute('class', 'button');
 		controlUI.style.borderStyle = 'solid';
 		controlUI.style.borderWidth = '2px';
 		controlUI.style.cursor = 'pointer';
@@ -240,7 +289,7 @@ VIPBiteAPI = function($, window, document) {
 	function generateSearchResult(content, imgurl)
 	{
 		var hrefElement = document.createElement("a");
-		hrefElement.setAttribute('href', "javascript:VIPBiteAPI.SelectRestaurant('"+content.restaurantname+"')");
+		hrefElement.setAttribute('href', "javascript:VIPBiteAPI.SelectRestaurant('"+content.name+"')");
 		hrefElement.setAttribute('class', 'list-group-item');
 
 		var strContent =	"<div class='fLeft'><img src='"
@@ -248,10 +297,10 @@ VIPBiteAPI = function($, window, document) {
 											+ "'class='searchImg'/></div>"
 											+ "<div class='fLeft'>"
 											+ "<h3 id='restName' class='list-group-item-heading'>"
-											+ content.restaurantname + "</h3>"
+											+ content.name + "</h3>"
 											+ "<p class='list-group-item-text'>"
 											+ "<span class='italic'>"
-											+ content.tags
+											+ content.cuisineType
 											+ "</span><br /> <span class='address'>"
 											+ content.address
 											+ "</span><br /><div class='special'> <span class='vipLabel'>"
@@ -266,11 +315,15 @@ VIPBiteAPI = function($, window, document) {
 	function generateMapSearchResult(content)
 	{
 		var hrefElement = document.createElement("a");
-		hrefElement.setAttribute('href', "javascript:VIPBiteAPI.SelectRestaurant('"+content.restaurantname+"')");
-		hrefElement.innerHTML = content.restaurantname;
+		hrefElement.setAttribute('href', "javascript:VIPBiteAPI.SelectRestaurant('"+content.name+"')");
+		hrefElement.innerHTML = content.name;
+
+		var pElement = document.createElement("p");
+		pElement.innerHTML = content.cuisineType;
 
 		var divElement = document.createElement("div")
 		divElement.appendChild(hrefElement);
+		divElement.appendChild(pElement);
 
 		var myLatLng = new google.maps.LatLng(content.latitude,content.longitude);
 		var infowindow = new google.maps.InfoWindow({ content: divElement });
@@ -282,13 +335,12 @@ VIPBiteAPI = function($, window, document) {
 	};
 
 	return {
-		RegisterNewUser : registerNewUser,
-		RenewUser : renewUser,
 		GetRestaurantInfo : getRestaurantInfo,
-		CheckInRenewOrRegister : checkIsRenewOrRegister,
 		CheckIsUserLogIn : checkIsUserLogIn,
 		BrowseRestaurant : browseRestaurant,
 		BrowseByMap : browseByMap,
+		RegisterNewUser : registerNewUser,
+		RenewUser : renewUser,
 		RequestLogin : requestLogin,
 		SelectRestaurant : selectRestaurant,
 		InitializeGM : initializeGM
