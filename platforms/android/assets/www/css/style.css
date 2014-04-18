@@ -33,7 +33,7 @@
 
 .imageGallery{
 	overflow: hidden;
-	max-height: 120px;
+	max-height: 70px;
 }
 
 .imgList {
@@ -46,15 +46,17 @@
 }
 
 .imageItem{
-	width:100%;
-	overflow:hidden;
-	height:120px;
+	width: 70px;
+	height:70px;
 	text-align:center;
+	float:left;
+	margin: 0px 5px;
+	overflow: hidden;
 }
 
 .contentWrap{
-	background: url(../content/images/trans.png) repeat;
-	margin-bottom:60px;
+	background: url(../content/images/trans.jpg) repeat;
+	margin-bottom:49px;
 	height: 100%;
 }
 
@@ -325,6 +327,10 @@ body{
 	left: -46px;
 }
 
+.indexBak {
+	margin-bottom: 0px !important;
+}
+
 /* Animation */
 .input, .user-icon, .pass-icon, .button, .register {
 	transition: all 0.5s ease;
@@ -383,7 +389,6 @@ body{
 	font-weight: 300;
 	font-size: 18px;
 	color: #fff;
-	margin-bottom:40px;
 }
 
 .register:hover {
@@ -509,8 +514,7 @@ select{
 }
 
 .searchImg{
-	min-width:75px;
-	max-width:100px;
+	max-width: 75px;
 	height: 50px;
 	padding-right:10px;
 	vertical-align:middle;

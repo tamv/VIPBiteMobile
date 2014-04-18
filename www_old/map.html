@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>VIPBite</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script type="text/javascript" src="//use.typekit.net/zrr2vfn.js"></script>
+		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+		<!-- Importing .css file -->
+		<link href="css/bootstrap.min.css"		rel="stylesheet" type="text/css">
+		<link href="css/style.css"						rel="stylesheet" type="text/css">
+		<link href="css/buttons.css"					rel="stylesheet" type="text/css">
+		<link href="css/type.css"							rel="stylesheet" type="text/css">
+		<link href="css/add2home.css"					rel="stylesheet" type="text/css">
+		<link href="css/flexslider.css"				rel="stylesheet" type="text/css">
+		<link href="css/photoswipe.css"				rel="stylesheet" type="text/css">
+
+		<!-- Importing .js file -->
+		<script type="text/javascript" src="script/jquery.js"></script>
+		<script type="text/javascript" src="script/jquery.flexslider-min.js"/></script>
+		<script type="text/javascript" src="script/jquery.nivo.slider.pack.js"></script>
+		<script type="text/javascript" src="script/custom.js"></script>
+		<script type="text/javascript" src="script/bootstrap.min.js"></script>
+		<script type="text/javascript" src="script/VIPBite_API.js"></script>
+		<script type="text/javascript" src="phonegap.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+	</head>
+
+	<body id="VIPBiteMobile_BodyContent">
+		<!-- Static Header -->
+		<div id="VIPBiteMobile_StaticHeader" class="mainHeader">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12 center-align"><img src="content/image/logo.png" /></div>
+				</div>
+			</div>
+		</div>
+		<!-- End Header -->
+
+		<!-- Page Content -->
+		<div id="VIPBite_BodyContent">
+			<div class="contentWrap">
+				<div class="container">
+					<div class="row">
+						<div id="VIPBite_GoogleMap" class="google_map"></div>
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Content -->
+
+		<!-- Static Footer -->
+		<div id="VIPBite_NavigationMenu" class="navigation">
+			<a href="index.html">
+				<img src="content/image/nav/home.png"/><en class="under-icon-text">Home</en>
+			</a>
+			<a href="browse.html">
+				<img src="content/image/nav/browse.png"/><en class="under-icon-text">Browse</en>
+			</a>
+			<a href="map.html">
+				<img src="content/image/nav/map.png"/><en class="under-icon-text">Map</en>
+			</a>
+			<a href="account.html">
+				<img src="content/image/nav/account.png"/><en class="under-icon-text">My VipBite</en>
+			</a>
+			<a href="more.html">
+				<img src="content/image/nav/more.png"/><en class="under-icon-text">More</en>
+			</a>
+		</div>
+		<!-- End Footer -->
+	</body>
+
+	<!-- Page's JavaScript section used for handle user interaction -->
+	<script>
+		function setMapSize()
+		{
+			var height = $(document).height() - 110;
+			$('#VIPBite_GoogleMap').css('min-height', height);
+
+			$(window).resize(function() {
+				var height = $(document).height() - 110;
+				$('#VIPBite_GoogleMap').css('min-height', height);
+			});
+		}
+
+		$(document).ready(setMapSize());
+		google.maps.visualRefresh = true;
+		google.maps.event.addDomListener(window, 'load', VIPBiteAPI.InitializeGM);
+	</script>
+</html>

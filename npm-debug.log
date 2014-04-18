@@ -1,0 +1,189 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', '-g', 'ios-deploy' ]
+2 info using npm@1.3.21
+3 info using node@v0.10.24
+4 verbose cache add [ 'ios-deploy', null ]
+5 verbose cache add name=undefined spec="ios-deploy" args=["ios-deploy",null]
+6 verbose parsed url { protocol: null,
+6 verbose parsed url   slashes: null,
+6 verbose parsed url   auth: null,
+6 verbose parsed url   host: null,
+6 verbose parsed url   port: null,
+6 verbose parsed url   hostname: null,
+6 verbose parsed url   hash: null,
+6 verbose parsed url   search: null,
+6 verbose parsed url   query: null,
+6 verbose parsed url   pathname: 'ios-deploy',
+6 verbose parsed url   path: 'ios-deploy',
+6 verbose parsed url   href: 'ios-deploy' }
+7 silly lockFile 69149c11-ios-deploy ios-deploy
+8 verbose lock ios-deploy /Users/tamanonvirulhakieat/.npm/69149c11-ios-deploy.lock
+9 silly lockFile 69149c11-ios-deploy ios-deploy
+10 silly lockFile 69149c11-ios-deploy ios-deploy
+11 verbose addNamed [ 'ios-deploy', '' ]
+12 verbose addNamed [ null, '*' ]
+13 silly lockFile 9c508a6b-ios-deploy ios-deploy@
+14 verbose lock ios-deploy@ /Users/tamanonvirulhakieat/.npm/9c508a6b-ios-deploy.lock
+15 silly addNameRange { name: 'ios-deploy', range: '*', hasData: false }
+16 verbose url raw ios-deploy
+17 verbose url resolving [ 'https://registry.npmjs.org/', './ios-deploy' ]
+18 verbose url resolved https://registry.npmjs.org/ios-deploy
+19 info trying registry request attempt 1 at 15:47:38
+20 http GET https://registry.npmjs.org/ios-deploy
+21 http 200 https://registry.npmjs.org/ios-deploy
+22 silly registry.get cb [ 200,
+22 silly registry.get   { date: 'Tue, 25 Mar 2014 21:47:39 GMT',
+22 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R14B04)',
+22 silly registry.get     etag: '"1EUZ0ZCP5DP9U0D4Y0XDS0A1W"',
+22 silly registry.get     'content-type': 'application/json',
+22 silly registry.get     via: '1.1 varnish',
+22 silly registry.get     'cache-control': 'max-age=1',
+22 silly registry.get     'content-length': '7547',
+22 silly registry.get     'accept-ranges': 'bytes',
+22 silly registry.get     age: '833',
+22 silly registry.get     'x-served-by': 'cache-v37-ASH, cache-lax1429-LAX',
+22 silly registry.get     'x-cache': 'MISS, MISS',
+22 silly registry.get     'x-cache-hits': '0, 0',
+22 silly registry.get     'x-timer': 'S1395783226.198899746,VS0,VS558,VE611,VE833353',
+22 silly registry.get     vary: 'Accept',
+22 silly registry.get     'keep-alive': 'timeout=10, max=50',
+22 silly registry.get     connection: 'Keep-Alive' } ]
+23 silly addNameRange number 2 { name: 'ios-deploy', range: '*', hasData: true }
+24 silly addNameRange versions [ 'ios-deploy',
+24 silly addNameRange   [ '1.0.1', '1.0.2', '1.0.3', '1.0.4', '1.0.5' ] ]
+25 verbose addNamed [ 'ios-deploy', '1.0.5' ]
+26 verbose addNamed [ '1.0.5', '1.0.5' ]
+27 silly lockFile 729e15fd-ios-deploy-1-0-5 ios-deploy@1.0.5
+28 verbose lock ios-deploy@1.0.5 /Users/tamanonvirulhakieat/.npm/729e15fd-ios-deploy-1-0-5.lock
+29 silly lockFile c733dcc8--ios-deploy-ios-deploy-1-0-5-tgz https://registry.npmjs.org/ios-deploy/-/ios-deploy-1.0.5.tgz
+30 verbose lock https://registry.npmjs.org/ios-deploy/-/ios-deploy-1.0.5.tgz /Users/tamanonvirulhakieat/.npm/c733dcc8--ios-deploy-ios-deploy-1-0-5-tgz.lock
+31 verbose addRemoteTarball [ 'https://registry.npmjs.org/ios-deploy/-/ios-deploy-1.0.5.tgz',
+31 verbose addRemoteTarball   '9e5a4acff2f0d2bf48ac114212dde15939b856a0' ]
+32 info retry fetch attempt 1 at 15:47:39
+33 verbose fetch to= /var/folders/5r/gxxbwxg177b5rkk6j265rl1h0000gn/T/npm-10856-zmNu_OCu/1395784059312-0.16907808184623718/tmp.tgz
+34 http GET https://registry.npmjs.org/ios-deploy/-/ios-deploy-1.0.5.tgz
+35 http 200 https://registry.npmjs.org/ios-deploy/-/ios-deploy-1.0.5.tgz
+36 verbose tar unpack /var/folders/5r/gxxbwxg177b5rkk6j265rl1h0000gn/T/npm-10856-zmNu_OCu/1395784059312-0.16907808184623718/tmp.tgz
+37 silly lockFile 3086598b-9312-0-16907808184623718-package tar:///var/folders/5r/gxxbwxg177b5rkk6j265rl1h0000gn/T/npm-10856-zmNu_OCu/1395784059312-0.16907808184623718/package
+38 verbose lock tar:///var/folders/5r/gxxbwxg177b5rkk6j265rl1h0000gn/T/npm-10856-zmNu_OCu/1395784059312-0.16907808184623718/package /Users/tamanonvirulhakieat/.npm/3086598b-9312-0-16907808184623718-package.lock
+39 silly lockFile 4b72f7d0-9312-0-16907808184623718-tmp-tgz tar:///var/folders/5r/gxxbwxg177b5rkk6j265rl1h0000gn/T/npm-10856-zmNu_OCu/1395784059312-0.16907808184623718/tmp.tgz
+40 verbose lock tar:///var/folders/5r/gxxbwxg177b5rkk6j265rl1h0000gn/T/npm-10856-zmNu_OCu/1395784059312-0.16907808184623718/tmp.tgz /Users/tamanonvirulhakieat/.npm/4b72f7d0-9312-0-16907808184623718-tmp-tgz.lock
+41 silly gunzTarPerm modes [ '755', '644' ]
+42 silly gunzTarPerm extractEntry package.json
+43 silly gunzTarPerm extractEntry .npmignore
+44 silly gunzTarPerm extractEntry README.md
+45 silly gunzTarPerm extractEntry LICENSE
+46 silly gunzTarPerm extractEntry Info.plist
+47 silly gunzTarPerm extractEntry Makefile
+48 silly gunzTarPerm extractEntry MobileDevice.h
+49 silly gunzTarPerm extractEntry Entitlements.plist
+50 silly gunzTarPerm extractEntry ResourceRules.plist
+51 silly gunzTarPerm extractEntry demo.c
+52 silly gunzTarPerm extractEntry ios-deploy.c
+53 silly gunzTarPerm extractEntry ios-deploy.dSYM/Contents/Info.plist
+54 silly lockFile 3086598b-9312-0-16907808184623718-package tar:///var/folders/5r/gxxbwxg177b5rkk6j265rl1h0000gn/T/npm-10856-zmNu_OCu/1395784059312-0.16907808184623718/package
+55 silly lockFile 3086598b-9312-0-16907808184623718-package tar:///var/folders/5r/gxxbwxg177b5rkk6j265rl1h0000gn/T/npm-10856-zmNu_OCu/1395784059312-0.16907808184623718/package
+56 silly lockFile 4b72f7d0-9312-0-16907808184623718-tmp-tgz tar:///var/folders/5r/gxxbwxg177b5rkk6j265rl1h0000gn/T/npm-10856-zmNu_OCu/1395784059312-0.16907808184623718/tmp.tgz
+57 silly lockFile 4b72f7d0-9312-0-16907808184623718-tmp-tgz tar:///var/folders/5r/gxxbwxg177b5rkk6j265rl1h0000gn/T/npm-10856-zmNu_OCu/1395784059312-0.16907808184623718/tmp.tgz
+58 verbose tar pack [ '/Users/tamanonvirulhakieat/.npm/ios-deploy/1.0.5/package.tgz',
+58 verbose tar pack   '/var/folders/5r/gxxbwxg177b5rkk6j265rl1h0000gn/T/npm-10856-zmNu_OCu/1395784059312-0.16907808184623718/package' ]
+59 verbose tarball /Users/tamanonvirulhakieat/.npm/ios-deploy/1.0.5/package.tgz
+60 verbose folder /var/folders/5r/gxxbwxg177b5rkk6j265rl1h0000gn/T/npm-10856-zmNu_OCu/1395784059312-0.16907808184623718/package
+61 silly lockFile 3086598b-9312-0-16907808184623718-package tar:///var/folders/5r/gxxbwxg177b5rkk6j265rl1h0000gn/T/npm-10856-zmNu_OCu/1395784059312-0.16907808184623718/package
+62 verbose lock tar:///var/folders/5r/gxxbwxg177b5rkk6j265rl1h0000gn/T/npm-10856-zmNu_OCu/1395784059312-0.16907808184623718/package /Users/tamanonvirulhakieat/.npm/3086598b-9312-0-16907808184623718-package.lock
+63 silly lockFile 8b404a4b-npm-ios-deploy-1-0-5-package-tgz tar:///Users/tamanonvirulhakieat/.npm/ios-deploy/1.0.5/package.tgz
+64 verbose lock tar:///Users/tamanonvirulhakieat/.npm/ios-deploy/1.0.5/package.tgz /Users/tamanonvirulhakieat/.npm/8b404a4b-npm-ios-deploy-1-0-5-package-tgz.lock
+65 silly lockFile 3086598b-9312-0-16907808184623718-package tar:///var/folders/5r/gxxbwxg177b5rkk6j265rl1h0000gn/T/npm-10856-zmNu_OCu/1395784059312-0.16907808184623718/package
+66 silly lockFile 3086598b-9312-0-16907808184623718-package tar:///var/folders/5r/gxxbwxg177b5rkk6j265rl1h0000gn/T/npm-10856-zmNu_OCu/1395784059312-0.16907808184623718/package
+67 silly lockFile 8b404a4b-npm-ios-deploy-1-0-5-package-tgz tar:///Users/tamanonvirulhakieat/.npm/ios-deploy/1.0.5/package.tgz
+68 silly lockFile 8b404a4b-npm-ios-deploy-1-0-5-package-tgz tar:///Users/tamanonvirulhakieat/.npm/ios-deploy/1.0.5/package.tgz
+69 silly lockFile fd5bc601-eat-npm-ios-deploy-1-0-5-package /Users/tamanonvirulhakieat/.npm/ios-deploy/1.0.5/package
+70 verbose lock /Users/tamanonvirulhakieat/.npm/ios-deploy/1.0.5/package /Users/tamanonvirulhakieat/.npm/fd5bc601-eat-npm-ios-deploy-1-0-5-package.lock
+71 silly lockFile fd5bc601-eat-npm-ios-deploy-1-0-5-package /Users/tamanonvirulhakieat/.npm/ios-deploy/1.0.5/package
+72 silly lockFile fd5bc601-eat-npm-ios-deploy-1-0-5-package /Users/tamanonvirulhakieat/.npm/ios-deploy/1.0.5/package
+73 verbose tar unpack /Users/tamanonvirulhakieat/.npm/ios-deploy/1.0.5/package.tgz
+74 silly lockFile a8881829-eat-npm-ios-deploy-1-0-5-package tar:///Users/tamanonvirulhakieat/.npm/ios-deploy/1.0.5/package
+75 verbose lock tar:///Users/tamanonvirulhakieat/.npm/ios-deploy/1.0.5/package /Users/tamanonvirulhakieat/.npm/a8881829-eat-npm-ios-deploy-1-0-5-package.lock
+76 silly lockFile 8b404a4b-npm-ios-deploy-1-0-5-package-tgz tar:///Users/tamanonvirulhakieat/.npm/ios-deploy/1.0.5/package.tgz
+77 verbose lock tar:///Users/tamanonvirulhakieat/.npm/ios-deploy/1.0.5/package.tgz /Users/tamanonvirulhakieat/.npm/8b404a4b-npm-ios-deploy-1-0-5-package-tgz.lock
+78 silly gunzTarPerm modes [ '755', '644' ]
+79 silly gunzTarPerm extractEntry package.json
+80 silly gunzTarPerm extractEntry .npmignore
+81 silly gunzTarPerm extractEntry README.md
+82 silly gunzTarPerm extractEntry LICENSE
+83 silly gunzTarPerm extractEntry Info.plist
+84 silly gunzTarPerm extractEntry Makefile
+85 silly gunzTarPerm extractEntry MobileDevice.h
+86 silly gunzTarPerm extractEntry Entitlements.plist
+87 silly gunzTarPerm extractEntry ResourceRules.plist
+88 silly gunzTarPerm extractEntry demo.c
+89 silly gunzTarPerm extractEntry ios-deploy.c
+90 silly gunzTarPerm extractEntry ios-deploy.dSYM/Contents/Info.plist
+91 silly lockFile a8881829-eat-npm-ios-deploy-1-0-5-package tar:///Users/tamanonvirulhakieat/.npm/ios-deploy/1.0.5/package
+92 silly lockFile a8881829-eat-npm-ios-deploy-1-0-5-package tar:///Users/tamanonvirulhakieat/.npm/ios-deploy/1.0.5/package
+93 silly lockFile 8b404a4b-npm-ios-deploy-1-0-5-package-tgz tar:///Users/tamanonvirulhakieat/.npm/ios-deploy/1.0.5/package.tgz
+94 silly lockFile 8b404a4b-npm-ios-deploy-1-0-5-package-tgz tar:///Users/tamanonvirulhakieat/.npm/ios-deploy/1.0.5/package.tgz
+95 verbose chmod /Users/tamanonvirulhakieat/.npm/ios-deploy/1.0.5/package.tgz 644
+96 verbose chown /Users/tamanonvirulhakieat/.npm/ios-deploy/1.0.5/package.tgz [ 501, 20 ]
+97 silly lockFile c733dcc8--ios-deploy-ios-deploy-1-0-5-tgz https://registry.npmjs.org/ios-deploy/-/ios-deploy-1.0.5.tgz
+98 silly lockFile c733dcc8--ios-deploy-ios-deploy-1-0-5-tgz https://registry.npmjs.org/ios-deploy/-/ios-deploy-1.0.5.tgz
+99 silly lockFile 729e15fd-ios-deploy-1-0-5 ios-deploy@1.0.5
+100 silly lockFile 729e15fd-ios-deploy-1-0-5 ios-deploy@1.0.5
+101 silly lockFile 9c508a6b-ios-deploy ios-deploy@
+102 silly lockFile 9c508a6b-ios-deploy ios-deploy@
+103 silly resolved [ { name: 'ios-deploy',
+103 silly resolved     version: '1.0.5',
+103 silly resolved     description: 'launch iOS apps iOS devices from the command line (Xcode 4)',
+103 silly resolved     main: 'ios-deploy',
+103 silly resolved     scripts: { preinstall: 'make ios-deploy' },
+103 silly resolved     bin: { 'ios-deploy': './ios-deploy' },
+103 silly resolved     repository: { type: 'git', url: 'https://github.com/phonegap/ios-deploy' },
+103 silly resolved     keywords: [ 'ios-deploy', 'deploy to iOS device' ],
+103 silly resolved     author: { name: 'Greg Hughes' },
+103 silly resolved     license: 'GPLv3',
+103 silly resolved     readme: 'ios-deploy\n==========\nInstall and debug iPhone apps without using Xcode. Designed to work on unjailbroken devices.\n\n## Requirements\n\n* Mac OS X. Tested on Snow Leopard only.\n* You need to have a valid iPhone development certificate installed.\n* Xcode must be installed, along with the SDK for your iOS version.\n\n## Usage\n\n    ./ios-deploy [OPTION]...\n      -d, --debug                  launch the app in GDB after installation\n      -i, --id <device_id>         the id of the device to connect to\n      -c, --detect                 only detect if the device is connected\n      -b, --bundle <bundle.app>    the path to the app bundle to be installed\n      -a, --args <args>            command line arguments to pass to the app when launching it\n      -t, --timeout <timeout>      number of seconds to wait for a device to be connected\n      -u, --unbuffered             don\'t buffer stdout\n      -g, --gdbargs <args>         extra arguments to pass to GDB when starting the debugger\n      -x, --gdbexec <file>         GDB commands script file\n      -n, --nostart                do not start the app when debugging\n      -v, --verbose                enable verbose output\n      -m, --noinstall              directly start debugging without app install (-d not required) \n      -V, --version                print the executable version\n\n## Demo\n\n* The included demo.app represents the minimum required to get code running on iOS.\n* `make install` will install demo.app to the device.\n* `make debug` will install demo.app and launch a GDB session.\n\n## Notes\n\n* With some modifications, it may be possible to use this without Xcode installed; however, you would need a copy of the relevant DeveloperDiskImage.dmg (included with Xcode). GDB would also run slower as symbols would be downloaded from the device on-the-fly.\n\n\n## Listing Device Ids\n\nDevice Ids are the UDIDs of the iOS devices. From the command line, you can list device ids [this way](http://javierhz.blogspot.com/2012/06/how-to-get-udid-of-iphone-using-shell.html):\n\n        system_profiler SPUSBDataType | sed -n -e \'/iPad/,/Serial/p\' -e \'/iPhone/,/Serial/p\' | grep "Serial Number:" | awk -F ": " \'{print $2}\'\n',
+103 silly resolved     readmeFilename: 'README.md',
+103 silly resolved     bugs: { url: 'https://github.com/phonegap/ios-deploy/issues' },
+103 silly resolved     homepage: 'https://github.com/phonegap/ios-deploy',
+103 silly resolved     _id: 'ios-deploy@1.0.5',
+103 silly resolved     dist: { shasum: '9e5a4acff2f0d2bf48ac114212dde15939b856a0' },
+103 silly resolved     _from: 'ios-deploy@',
+103 silly resolved     _resolved: 'https://registry.npmjs.org/ios-deploy/-/ios-deploy-1.0.5.tgz' } ]
+104 info install ios-deploy@1.0.5 into /usr/local/lib
+105 info installOne ios-deploy@1.0.5
+106 info /usr/local/lib/node_modules/ios-deploy unbuild
+107 verbose tar unpack /Users/tamanonvirulhakieat/.npm/ios-deploy/1.0.5/package.tgz
+108 silly lockFile d4189100-ocal-lib-node-modules-ios-deploy tar:///usr/local/lib/node_modules/ios-deploy
+109 verbose lock tar:///usr/local/lib/node_modules/ios-deploy /Users/tamanonvirulhakieat/.npm/d4189100-ocal-lib-node-modules-ios-deploy.lock
+110 silly lockFile 8b404a4b-npm-ios-deploy-1-0-5-package-tgz tar:///Users/tamanonvirulhakieat/.npm/ios-deploy/1.0.5/package.tgz
+111 verbose lock tar:///Users/tamanonvirulhakieat/.npm/ios-deploy/1.0.5/package.tgz /Users/tamanonvirulhakieat/.npm/8b404a4b-npm-ios-deploy-1-0-5-package-tgz.lock
+112 silly gunzTarPerm modes [ '755', '644' ]
+113 error Error: EACCES, mkdir '/usr/local/lib/node_modules/ios-deploy'
+113 error  { [Error: EACCES, mkdir '/usr/local/lib/node_modules/ios-deploy']
+113 error   errno: 3,
+113 error   code: 'EACCES',
+113 error   path: '/usr/local/lib/node_modules/ios-deploy',
+113 error   fstream_type: 'Directory',
+113 error   fstream_path: '/usr/local/lib/node_modules/ios-deploy',
+113 error   fstream_class: 'DirWriter',
+113 error   fstream_stack:
+113 error    [ '/usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23',
+113 error      '/usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:37:53',
+113 error      'Object.oncomplete (fs.js:107:15)' ] }
+114 error Please try running this command again as root/Administrator.
+115 error System Darwin 13.1.0
+116 error command "node" "/usr/local/bin/npm" "install" "-g" "ios-deploy"
+117 error cwd /Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile
+118 error node -v v0.10.24
+119 error npm -v 1.3.21
+120 error path /usr/local/lib/node_modules/ios-deploy
+121 error fstream_path /usr/local/lib/node_modules/ios-deploy
+122 error fstream_type Directory
+123 error fstream_class DirWriter
+124 error code EACCES
+125 error errno 3
+126 error stack Error: EACCES, mkdir '/usr/local/lib/node_modules/ios-deploy'
+127 error fstream_stack /usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23
+127 error fstream_stack /usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:37:53
+127 error fstream_stack Object.oncomplete (fs.js:107:15)
+128 verbose exit [ 3, true ]

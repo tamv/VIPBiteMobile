@@ -2,7 +2,7 @@
 
 <html>
 	<head>
-		<title>VIPBite</title>
+		<title>VIPbite</title>
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<script type="text/javascript" src="//use.typekit.net/zrr2vfn.js"></script>
@@ -23,13 +23,13 @@
 		<script type="text/javascript" src="script/jquery.nivo.slider.pack.js"></script>
 		<script type="text/javascript" src="script/custom.js"></script>
 		<script type="text/javascript" src="script/bootstrap.min.js"></script>
-		<script type="text/javascript" src="script/VIPBite_API.js"></script>
+		<script type="text/javascript" src="script/VIPbite_API.js"></script>
 		<script type="text/javascript" src="phonegap.js"></script>
 	</head>
 
-	<body id="VIPBiteMobile_BodyContent">
+	<body id="VIPbiteMobile_BodyContent">
 		<!-- Static Header -->
-		<div id="VIPBiteMobile_StaticHeader" class="mainHeader">
+		<div id="VIPbiteMobile_StaticHeader" class="mainHeader">
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-12 center-align"><img src="content/image/logo.png" /></div>
@@ -39,22 +39,18 @@
 		<!-- End Header -->
 
 		<!-- Page Content -->
-		<div id="VIPBite_BodyContent">
+		<div id="VIPbite_BodyContent">
 			<div class="container">
 				<div class="row">
-					<form class="topSearch" onsubmit="return VIPBiteAPI.BrowseRestaurant()">
-						<input type="text" id="VIPBite_BrowseInput" class="registrationInput" name="VIPBite_BrowseInput" placeholder="Search Participateing Calgary Restaurants" />
+					<form class="topSearch" onsubmit="return VIPbiteAPI.BrowseRestaurant()">
+						<input type="text" id="VIPbite_BrowseInput" class="registrationInput" name="VIPbite_BrowseInput" placeholder="Search Participating Calgary Restaurants" />
 					</form>
 				</div>
 			</div>
 
 			<div class="contentWrap">
 				<div class="container">
-					<div class="row">
-						<div class="col-sm-12">
-							<div id="VIPBite_BrowseResult" class="list-group">
-							</div>
-						</div>
+					<div id="VIPbite_BrowseResult" class="list-group">
 					</div>
 				</div>
 			</div>
@@ -62,7 +58,7 @@
 		<!-- End Content -->
 
 		<!-- Static Footer -->
-		<div id="VIPBite_NavigationMenu" class="navigation">
+		<div id="VIPbite_NavigationMenu" class="navigation">
 			<a href="index.html">
 				<img src="content/image/nav/home.png"/><en class="under-icon-text">Home</en>
 			</a>
@@ -84,5 +80,6 @@
 
 	<!-- Page's JavaScript section used for handle user interaction -->
 	<script>
+		$(document).ready(VIPbiteAPI.BrowseRestaurant());
 	</script>
 </html>

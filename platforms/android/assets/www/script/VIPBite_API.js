@@ -1,10 +1,10 @@
-var VIPBiteAPI = VIPBiteAPI || {};
+var VIPbiteAPI = VIPbiteAPI || {};
 
-VIPBiteAPI = function($, window, document) {
+VIPbiteAPI = function($, window, document) {
 
 	function initializeGM()
 	{
-		var map_canvas = document.getElementById('VIPBite_GoogleMap');
+		var map_canvas = document.getElementById('VIPbite_GoogleMap');
 		var searchMapDiv = document.createElement('div');
 
 		var featureOpts = [{
@@ -38,7 +38,7 @@ VIPBiteAPI = function($, window, document) {
 
 	function registerNewUser()
 	{
-		var urlpart = $("#VIPBite_RegisterForm").serializeArray();
+		var urlpart = $("#VIPbite_RegisterForm").serializeArray();
 		var data = {}
 
 		for (var i = 0; i < urlpart.length; i++) {
@@ -51,7 +51,7 @@ VIPBiteAPI = function($, window, document) {
 			dataType: "JSONP",
 			data: data,
 			success: function(data) {
-				$("#VIPBite_RegisterForm").hide();
+				$("#VIPbite_RegisterForm").hide();
 				$("#feedback_content").html(data.confirmation)
 
 				if(data.response == "success")
@@ -65,7 +65,7 @@ VIPBiteAPI = function($, window, document) {
 	function renewUser()
 	{
 		var user = JSON.parse(sessionStorage.getItem("UserLoginId"));
-		$("#VIPBite_RenewForm").serializeArray();
+		$("#VIPbite_RenewForm").serializeArray();
 
 		var data = {}
 
@@ -81,7 +81,7 @@ VIPBiteAPI = function($, window, document) {
 			dataType: "JSONP",
 			data: data,
 			success: function(data) {
-				$("#VIPBite_RenewForm").hide();
+				$("#VIPbite_RenewForm").hide();
 				$("#feedback_content").html(data.confirmation)
 
 				if(data.response == "success")
@@ -98,26 +98,26 @@ VIPBiteAPI = function($, window, document) {
 
 		if(!isLogin)
 		{
-			$("#VIPBite_LoginForm").show();
-			$("#VIPBite_ValidUser").hide();
-			$("#VIPBite_ExpiredUser").hide();
+			$("#VIPbite_LoginForm").show();
+			$("#VIPbite_ValidUser").hide();
+			$("#VIPbite_ExpiredUser").hide();
 		}
 		else
 		{
-			$("#VIPBite_ValidUserName").html(isLogin.firstName + "&nbsp"+ isLogin.lastName);
-			$("#VIPBite_UserExpDate").html(isLogin.expDate);
+			$("#VIPbite_ValidUserName").html(isLogin.firstName + "&nbsp"+ isLogin.lastName);
+			$("#VIPbite_UserExpDate").html(isLogin.expDate);
 
 			if(new Date(isLogin.expDate) > new Date())
 			{
-					$("#VIPBite_LoginForm").hide();
-					$("#VIPBite_ValidUser").show();
-					$("#VIPBite_ExpiredUser").hide();
+					$("#VIPbite_LoginForm").hide();
+					$("#VIPbite_ValidUser").show();
+					$("#VIPbite_ExpiredUser").hide();
 			}
 			else
 			{
-				$("#VIPBite_LoginForm").hide();
-				$("#VIPBite_ExpiredUser").show();
-				$("#VIPBite_ValidUser").hide();
+				$("#VIPbite_LoginForm").hide();
+				$("#VIPbite_ExpiredUser").show();
+				$("#VIPbite_ValidUser").hide();
 			}
 		}
 	};
@@ -128,7 +128,7 @@ VIPBiteAPI = function($, window, document) {
 			url: "http://vipbite-deploy.herokuapp.com/mobile/login?method=post",
 			type: "POST",
 			dataType: "JSONP",
-			data: {username: $("#VIPBite_LoginUserName").val(), password: $("#VIPBite_LoginPwd").val()},
+			data: {username: $("#VIPbite_LoginUserName").val(), password: $("#VIPbite_LoginPwd").val()},
 			success: function(data) {
 				sessionStorage.setItem('UserLoginId', JSON.stringify(data.respond));
 				checkIsUserLogIn();
@@ -138,14 +138,14 @@ VIPBiteAPI = function($, window, document) {
 
 	function browseRestaurant()
 	{
-		$("#VIPBite_BrowseResult").html("");
+		$("#VIPbite_BrowseResult").html("");
 
 		$.ajax({
 			type: "POST",
 			url: "http://vipbite-deploy.herokuapp.com/mobile/browse",
 			dataType: "JSONP",
 			async: false,
-			data: {browseby: $("#VIPBite_BrowseInput").val()},
+			data: {browseby: $("#VIPbite_BrowseInput").val()},
 			success: function(data) {
 				sessionStorage.setItem('ImageLink', data.originalUri);
 
@@ -206,53 +206,57 @@ VIPBiteAPI = function($, window, document) {
 				{
 					var imageLink = data.imageUri;
 
-					$("#VIPBite_RestaurantName").html(data.name);
-					document.getElementById("VIPBite_LogoImg").src = (imageLink + "/image/restaurant logo/" + data.logo);
+					$("#VIPbite_RestaurantName").html(data.name);
+					document.getElementById("VIPbite_LogoImg").src = (imageLink + "/image/restaurant logo/" + data.logo);
 
 					for(var i = 0; i < data.images.length; i++)
 					{
-						var colElement = document.createElement("div");
-						colElement.setAttribute('class', 'imgList');
+						var divElem = document.createElement("div");
+						divElem.setAttribute('class', 'imageItem');
 
-						var divElement = document.createElement("div");
-						divElement.setAttribute('class', 'imageItem');
+						var aElem = document.createElement("a");
+						aElem.setAttribute('href', (imageLink + data.images[i]));
+						aElem.setAttribute('data-lightbox-gallery', "gallery1");
+						aElem.setAttribute('class', 'imageGal');
 
-						var hrefElement = document.createElement("a");
-						var imgElement = document.createElement("img");
-						hrefElement.setAttribute('href', (imageLink + data.images[i]));
-						hrefElement.setAttribute('data-lightbox-gallery', "gallery1");
-						hrefElement.setAttribute('class', 'imageGal');
+						var imgElem = document.createElement('img');
+						imgElem.setAttribute('src', (imageLink + data.images[i]));
+						imgElem.setAttribute('alt', (""));
+						imgElem.setAttribute('align', 'middle');
+						imgElem.setAttribute('height', '70px');
+						
+						aElem.appendChild(imgElem);
+						divElem.appendChild(aElem);
 
-						imgElement.setAttribute('src', (imageLink + data.images[i]));
-						imgElement.setAttribute('height', '100%');
-						imgElement.setAttribute('alt', "Gallery");
-
-						hrefElement.appendChild(imgElement);
-						divElement.appendChild(hrefElement);
-						colElement.appendChild(divElement);
-
-						$("#VIPBite_RestaurantGallery").append(colElement);
+						$("#VIPbiteGallary").append(divElem);
 					};
 
-					$("#VIPBite_DealContent").html(data.dealDetail);
-					$("#VIPBite_UrbanspoonContent").html(data.rate);
-					$("#VIPBite_CuisineType").html(data.cuisineType);
-					$("#VIPBite_RestaurantDescription").html(data.comment);
-					$("#VIPBite_PhoneNumber").html(data.phone);
-					$("#VIPBite_ReservationInfo").html(data.reservation);
+					$("#VIPbite_DealContent").html(data.dealDetail);
+					$("#VIPbite_UrbanspoonContent").html(data.rate);
+					$("#VIPbite_CuisineType").html(data.cuisineType);
+					$("#VIPbite_RestaurantDescription").html(data.comment);
+					$("#VIPbite_PhoneNumber").html(data.phone);
+					$("#VIPbite_ReservationInfo").html(data.reservation);
 					for(var i = 0; i < data.hour.length; i++)
 					{
-						$("#VIPBite_OperatingHour").append(data.hour[i]);
-						$("#VIPBite_OperatingHour").append('<br/>');
+						$("#VIPbite_OperatingHour").append(data.hour[i]);
+						$("#VIPbite_OperatingHour").append('<br/>');
 					}
-					$("#VIPBite_RestaurantAddress").html(data.address.toString());
-					$("#VIPBite_WebSite").html(data.web);
+					$("#VIPbite_RestaurantAddress").html(data.address.toString());
+					$("#VIPbite_WebSite").html(data.web);
 
 					$('.imageGal').nivoLightbox({ effect: 'fade' });
 				}
 			}
 		});
 	};
+
+	function requestLogOut()
+	{
+		alert("lol-kk");
+		sessionStorage.clear();
+		location.replace("index.html");
+	}
 
 	//PRIVATE FUNCTION
 	function mapsearchControl(controlDiv, map)
@@ -289,33 +293,35 @@ VIPBiteAPI = function($, window, document) {
 	function generateSearchResult(content, imgurl)
 	{
 		var hrefElement = document.createElement("a");
-		hrefElement.setAttribute('href', "javascript:VIPBiteAPI.SelectRestaurant('"+content.name+"')");
+		hrefElement.setAttribute('href', "javascript:VIPbiteAPI.SelectRestaurant('"+content.name+"')");
 		hrefElement.setAttribute('class', 'list-group-item');
 
-		var strContent =	"<div class='fLeft'><img src='"
-											+ imgurl + content.imageUrl
-											+ "'class='searchImg'/></div>"
-											+ "<div class='fLeft'>"
-											+ "<h3 id='restName' class='list-group-item-heading'>"
-											+ content.name + "</h3>"
-											+ "<p class='list-group-item-text'>"
-											+ "<span class='italic'>"
-											+ content.cuisineType
-											+ "</span><br /> <span class='address'>"
-											+ content.address
-											+ "</span><br /><div class='special'> <span class='vipLabel'>"
-											+ "<i class='fa fa-cutlery'> </i> VIPbite Deal: </span>"
-											+ "Two For One Pizzas Every Friday morning"
-											+ "</div> </p> </div> </a>";
+		var strContent = "<div class='row'>"
+											+"<div class='col-xs-2'><img src='" + imgurl + content.imageUrl + "'class='searchImg'/></div>"
+											+ "<div class='col-xs-10'>"
+												+ "<h3 id='restName' class='list-group-item-heading'>"
+												+ content.name + "</h3>"
+												+ "<p class='list-group-item-text'>"
+													+ "<span class='italic'>" + content.cuisineType + "</span><br />" 
+													+ "<span class='address'>" + content.address + "</span><br />"
+												+ "</p>"
+											+ " </div>"
+											+ "<div class='col-xs-12'>"
+												+ "<div class='special'> <span class='vipLabel'>"
+													+ "<i class='fa fa-cutlery'> </i> VIPbite Deal: </span>"
+													+ "Two For One Pizzas Every Friday morning"
+												+ "</div> "
+											+ "</div>"
+										+ "</div>";
 		hrefElement.innerHTML = strContent;
 
-		$("#VIPBite_BrowseResult").append(hrefElement);
+		$("#VIPbite_BrowseResult").append(hrefElement);
 	};
 
 	function generateMapSearchResult(content)
 	{
 		var hrefElement = document.createElement("a");
-		hrefElement.setAttribute('href', "javascript:VIPBiteAPI.SelectRestaurant('"+content.name+"')");
+		hrefElement.setAttribute('href', "javascript:VIPbiteAPI.SelectRestaurant('"+content.name+"')");
 		hrefElement.innerHTML = content.name;
 
 		var pElement = document.createElement("p");
@@ -343,7 +349,8 @@ VIPBiteAPI = function($, window, document) {
 		RenewUser : renewUser,
 		RequestLogin : requestLogin,
 		SelectRestaurant : selectRestaurant,
-		InitializeGM : initializeGM
+		InitializeGM : initializeGM,
+		RequestLogout : requestLogOut
 	}
 
 }(jQuery, window, document);

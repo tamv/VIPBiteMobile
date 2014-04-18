@@ -5,19 +5,19 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>055B7EC2-58D7-49D9-B88A-3EB931DEFD2A</string>
+	<string>63A33416-3472-4462-9413-6AD6EF735B22</string>
 	<key>IDESourceControlProjectName</key>
-	<string>VIPBite</string>
+	<string>VIPbite</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>3FA36F1F-28EF-4882-A365-A2372315F1C1</key>
+		<key>7D8BA020-93A4-4EB9-A8F6-1C83F6B1A983</key>
 		<string>https://github.com/tamv/VIPBiteMobile.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>platforms/ios/VIPBite.xcodeproj/project.xcworkspace</string>
+	<string>platforms/ios/VIPbite.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>3FA36F1F-28EF-4882-A365-A2372315F1C1</key>
+		<key>7D8BA020-93A4-4EB9-A8F6-1C83F6B1A983</key>
 		<string>../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -25,14 +25,14 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>3FA36F1F-28EF-4882-A365-A2372315F1C1</string>
+	<string>7D8BA020-93A4-4EB9-A8F6-1C83F6B1A983</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>3FA36F1F-28EF-4882-A365-A2372315F1C1</string>
+			<string>7D8BA020-93A4-4EB9-A8F6-1C83F6B1A983</string>
 			<key>IDESourceControlWCCName</key>
 			<string>VIPBiteMobile</string>
 		</dict>

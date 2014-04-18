@@ -2,7 +2,7 @@
 
 <html>
 	<head>
-		<title>VIPBite</title>
+		<title>VIPbite</title>
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<script type="text/javascript" src="//use.typekit.net/zrr2vfn.js"></script>
@@ -23,14 +23,14 @@
 		<script type="text/javascript" src="script/jquery.nivo.slider.pack.js"></script>
 		<script type="text/javascript" src="script/custom.js"></script>
 		<script type="text/javascript" src="script/bootstrap.min.js"></script>
-		<script type="text/javascript" src="script/VIPBite_API.js"></script>
+		<script type="text/javascript" src="script/VIPbite_API.js"></script>
 		<script type="text/javascript" src="phonegap.js"></script>
 		<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
 	</head>
 
-	<body id="VIPBiteMobile_BodyContent">
+	<body id="VIPbiteMobile_BodyContent">
 		<!-- Static Header -->
-		<div id="VIPBiteMobile_StaticHeader" class="mainHeader">
+		<div id="VIPbiteMobile_StaticHeader" class="mainHeader">
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-12 center-align"><img src="content/image/logo.png" /></div>
@@ -40,11 +40,11 @@
 		<!-- End Header -->
 
 		<!-- Page Content -->
-		<div id="VIPBite_BodyContent">
+		<div id="VIPbite_BodyContent">
 			<div class="contentWrap">
 				<div class="container">
 					<div class="row">
-						<div id="VIPBite_GoogleMap" class="google_map"></div>
+						<div id="VIPbite_GoogleMap" class="google_map"></div>
 					</div>
 				</div>
 				</div>
@@ -53,7 +53,7 @@
 		<!-- End Content -->
 
 		<!-- Static Footer -->
-		<div id="VIPBite_NavigationMenu" class="navigation">
+		<div id="VIPbite_NavigationMenu" class="navigation">
 			<a href="index.html">
 				<img src="content/image/nav/home.png"/><en class="under-icon-text">Home</en>
 			</a>
@@ -78,16 +78,22 @@
 		function setMapSize()
 		{
 			var height = $(document).height() - 110;
-			$('#VIPBite_GoogleMap').css('min-height', height);
+			$('#VIPbite_GoogleMap').css('min-height', height);
 
 			$(window).resize(function() {
 				var height = $(document).height() - 110;
-				$('#VIPBite_GoogleMap').css('min-height', height);
+				$('#VIPbite_GoogleMap').css('min-height', height);
 			});
 		}
+		
+		$(document).ready(function () {
+			setMapSize();
+		});
 
-		$(document).ready(setMapSize());
-		google.maps.visualRefresh = true;
-		google.maps.event.addDomListener(window, 'load', VIPBiteAPI.InitializeGM);
+		$(window).load(function () {
+			google.maps.visualRefresh = true;
+			VIPbiteAPI.InitializeGM();
+			window.setTimeout(VIPbiteAPI.BrowseByMap, 1000);
+		});
 	</script>
 </html>
