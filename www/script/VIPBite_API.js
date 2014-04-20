@@ -325,7 +325,7 @@ VIPbiteAPI = function($, window, document) {
 		hrefElement.innerHTML = content.name;
 
 		var pElement = document.createElement("p");
-		pElement.innerHTML = content.cuisineType;
+		pElement.innerHTML = content.search;
 
 		var divElement = document.createElement("div")
 		divElement.appendChild(hrefElement);
