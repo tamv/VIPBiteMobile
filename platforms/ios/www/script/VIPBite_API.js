@@ -298,11 +298,11 @@ VIPbiteAPI = function($, window, document) {
 
 		var strContent = "<div class='row'>"
 											+"<div class='col-xs-2'><img src='" + imgurl + content.imageUrl + "'class='searchImg'/></div>"
-											+ "<div class='col-xs-10'>"
+											+ "<div class='col-xs-8'>"
 												+ "<h3 id='restName' class='list-group-item-heading'>"
 												+ content.name + "</h3>"
 												+ "<p class='list-group-item-text'>"
-													+ "<span class='italic'>" + content.cuisineType + "</span><br />" 
+													+ "<span class='italic'>" + content.search + "</span><br />" 
 													+ "<span class='address'>" + content.address + "</span><br />"
 												+ "</p>"
 											+ " </div>"
@@ -325,7 +325,7 @@ VIPbiteAPI = function($, window, document) {
 		hrefElement.innerHTML = content.name;
 
 		var pElement = document.createElement("p");
-		pElement.innerHTML = content.cuisineType;
+		pElement.innerHTML = content.search;
 
 		var divElement = document.createElement("div")
 		divElement.appendChild(hrefElement);
