@@ -136,7 +136,7 @@ VIPbiteAPI = function($, window, document) {
 		});
 	};
 
-	function browseRestaurant()
+	function browseRestaurant(showOnMap)
 	{
 		$("#VIPbite_BrowseResult").html("");
 
@@ -149,10 +149,21 @@ VIPbiteAPI = function($, window, document) {
 			success: function(data) {
 				sessionStorage.setItem('ImageLink', data.originalUri);
 
-				for(var i = 0; i < data.response.length; i++)
+				if(showOnMap == false)
 				{
-					generateSearchResult(data.response[i], data.originalUri);
-					sessionStorage.setItem(data.response[i].name, JSON.stringify(data.response[i]));
+					for(var i = 0; i < data.response.length; i++)
+					{
+						generateSearchResult(data.response[i], data.originalUri);
+						sessionStorage.setItem(data.response[i].name, JSON.stringify(data.response[i]));
+					}
+				}
+				else
+				{
+					for(var i = 0; i < data.response.length; i++)
+					{
+						generateMapSearchResult(data.response[i]);
+						sessionStorage.setItem(data.response[i].name, JSON.stringify(data.response[i]));
+					}
 				}
 			}
 		});
@@ -298,7 +309,7 @@ VIPbiteAPI = function($, window, document) {
 
 		var strContent = "<div class='row'>"
 											+"<div class='col-xs-2'><img src='" + imgurl + content.imageUrl + "'class='searchImg'/></div>"
-											+ "<div class='col-xs-8'>"
+											+ "<div class='col-xs-8 col-xs-push-1'>"
 												+ "<h3 id='restName' class='list-group-item-heading'>"
 												+ content.name + "</h3>"
 												+ "<p class='list-group-item-text'>"
@@ -325,7 +336,7 @@ VIPbiteAPI = function($, window, document) {
 		hrefElement.innerHTML = content.name;
 
 		var pElement = document.createElement("p");
-		pElement.innerHTML = content.search;
+		pElement.innerHTML = content.VIPBiteDeal;
 
 		var divElement = document.createElement("div")
 		divElement.appendChild(hrefElement);
