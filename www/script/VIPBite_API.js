@@ -36,6 +36,41 @@ VIPbiteAPI = function($, window, document) {
 		google.maps.event.trigger(map, "resize");
 	};
 
+	function initializeRestaurantMap(lat, lng, name)
+	{
+		var map_canvas = document.getElementById('VIPbite_RestaurantMapCanvas');
+
+		var featureOpts = [{
+		stylers: [	{ visibility: 'simplified' }, ] }, 
+								{ elementType: 'labels', stylers: [ { visibility: 'off' } ] } ];
+
+		var styledMapOptions = { name: 'VIPbite' };
+		var customMapType = new google.maps.StyledMapType(featureOpts, styledMapOptions);
+
+		var mapProperties = {
+			center:new google.maps.LatLng(lat,lng),
+			zoom:13,
+			panControl: false,
+			zoomControl: false,
+			mapTypeControl: false,
+			scaleControl: false,
+			streetViewControl: false,
+			overviewMapControl: false,
+			draggable: false,
+			scrollwheel: false,
+			mapTypeControlOptions: { mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'VIPbite'] },
+			mapTypeId: 'VIPbite'
+		};
+
+		map = new google.maps.Map(map_canvas,mapProperties);
+		map.mapTypes.set('VIPbite', customMapType);
+
+		var marker = new google.maps.Marker({
+											position: new google.maps.LatLng(lat,lng),
+											map: map,
+											title: name});
+	}
+
 	function registerNewUser()
 	{
 		var urlpart = $("#VIPbite_RegisterForm").serializeArray();
@@ -257,6 +292,8 @@ VIPbiteAPI = function($, window, document) {
 					$("#VIPbite_WebSite").html(data.web);
 
 					$('.imageGal').nivoLightbox({ effect: 'fade' });
+
+					initializeRestaurantMap(data.lat, data.lng, data.name);
 				}
 			}
 		});
@@ -347,7 +384,7 @@ VIPbiteAPI = function($, window, document) {
 		var marker = new google.maps.Marker({
 											position: myLatLng,
 											map: map,
-											title: 'Uluru (Ayers Rock)'});
+											title: content.name});
 		google.maps.event.addListener(marker, 'click', function() { infowindow.open(map,marker); });
 	};
 
