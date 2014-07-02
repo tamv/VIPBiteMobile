@@ -156,7 +156,7 @@ body{
 
 .tagline{
 	color:#333;
-	padding:10px;
+	padding: 0px 10px 10px 10px;
 	font-family: 'cicle_gorditagordita';
 }
 
@@ -510,7 +510,7 @@ select{
 
 .list-group-item{
 	overflow:hidden;
-	padding-bottom:20px;
+	padding-bottom:10px;
 }
 
 .searchImg{
@@ -681,5 +681,20 @@ strong{
 
 .panel-title a:hover{
 	text-decoration:none;
+}
+
+#TitleTabsContent {
+	margin: auto !important;
+	display: inline-block !important;
+}
+
+#TitleTabsContent li {
+	float:none !important;
+	display:inline-block !important;
+	margin: auto !important;
+}
+
+.list-group-item p, strong {
+	display: inline-block !important;
 }
 

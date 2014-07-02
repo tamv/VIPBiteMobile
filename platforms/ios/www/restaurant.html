@@ -24,6 +24,7 @@
 		<script type="text/javascript" src="script/VIPbite_API.js"></script>
 		<script type="text/javascript" src="script/nivo-lightbox.js"></script>
 		<script type="text/javascript" src="phonegap.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
 	</head>
 
 	<body id="VIPbiteMobile_BodyContent">
@@ -61,65 +62,69 @@
 					</div>
 				</div>
 				<div class="row" style="margin-top:20px;">
-					<div lass="col-sm-12">
-						<div>
-						<!-- Nav tabs -->
-							<ul id="tabs" class="nav nav-pills" data-tabs="tabs">
-								<li class="active"><a href="#VIPbite_RestaurantDeal" data-toggle="tab">VIPbite Deal</a></li>
-								<li><a href="#VIPbite_RestaurantInfo" data-toggle="tab">Information</a></li>
+					<div class="col-sm-12">
+						<div id="TitleTabs" class="row col-sm-12 text-center">
+							<ul id="TitleTabsContent" class="nav nav-pills" data-tabs="tabs">
+								<li class="active"><a href="#VIPbite_RestaurantInfo" data-toggle="tab">Details</a></li>
+								<li><a href="#VIPbite_RestaurantDeal" data-toggle="tab">VIPbite Deal</a></li>
 								<li><a href="#VIPbite_RestaurantContact" data-toggle="tab">Contact</a></li>
 							</ul>
+						</div>
 
-							<!-- Tab panes -->
-							<div class="tab-content">
-								<div class="tab-pane active" id="VIPbite_RestaurantDeal">
-									<ul class="list-group push-top">
-										<li class="list-group-item">
-											<strong>Current VIPbite Deal:</strong><br/>
-											<p id="VIPbite_DealContent">DEAL CONTENT GOES HERE!</p>
-										</li>
-										<li class="list-group-item">
-											<a href="https://twitter.com/share" class="twitter-share-button" data-lang="en">Tweet</a>
-											<p id="VIPbite_UrbanspoonContent">[--Urbanspoon Rating Goes Here--]</p>
-										</li>
-									</ul>
-								</div>
-								<div class="tab-pane" id="VIPbite_RestaurantInfo">
-									<ul class="list-group push-top">
-										<li class="list-group-item">
-											<strong>Cuisine Type:</strong><br/>
-											<p id="VIPbite_CuisineType">Cuisine Type</p>
-										</li>
-										<li class="list-group-item">
-											<strong>Description:</strong><br/>
-											<p id="VIPbite_RestaurantDescription">Description Content</p>
-										</li>
-									</ul>
-								</div>
-								<div class="tab-pane" id="VIPbite_RestaurantContact">
-									<ul class="list-group push-top">
-										<li class="list-group-item">
-											<strong>Phone Number:</strong><br/>
-											<p id="VIPbite_PhoneNumber">[--Number Goes Here--]</>
-										</li>
-										<li class="list-group-item">
-											<strong>Service Hour:</strong><br/>
-											<p id="VIPbite_OperatingHour"></p>
-										</li>
-										<li class="list-group-item">
-											<strong>Reservation Detail:</strong><br/>
-											<p id="VIPbite_ReservationInfo">[--Reservation Goes Here--]</p>
-										</li>
-										<li class="list-group-item">
-											<strong>Restaurant Address:</strong><br/>
-											<p id="VIPbite_RestaurantAddress">[--Address Goes Here--]</p>
-										</li>
-										<li class="list-group-item">
-											<strong>Web Site:</strong><br/>
-											<p id="VIPbite_WebSite">[--website Goes Here--]</p>
-										</li>
-									</ul>
-								</div>
+						<!-- Tab panes -->
+						<div class="tab-content row col-sm-12">
+							<div class="tab-pane" id="VIPbite_RestaurantDeal">
+								<ul class="list-group push-top">
+									<li class="list-group-item">
+										<strong>Current VIPbite Deal:</strong><br/>
+										<p id="VIPbite_DealContent">DEAL CONTENT GOES HERE!</p>
+									</li>
+									<li class="list-group-item text-center">
+										<a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" 
+										style="text-decoration: none !important;">
+											<img src="content/image/twitter.png" width="30px" height="30px"/>
+										</a>
+										<img src="content/image/urbanspoon.png" widht="30px" height="30px;" style="margin-left: 20px;"/>
+										<p id="VIPbite_UrbanspoonContent">[--Urbanspoon Rating Goes Here--]</p>
+									</li>
+								</ul>
+							</div>
+							<div class="tab-pane active" id="VIPbite_RestaurantInfo">
+								<ul class="list-group push-top">
+									<li class="list-group-item">
+										<strong>Cuisine Type:</strong> <p id="VIPbite_CuisineType">Cuisine Type</p>
+									</li>
+									<li class="list-group-item">
+										<strong>Description:</strong><br/>
+										<p id="VIPbite_RestaurantDescription">Description Content</p>
+									</li>
+									<li class="list-group-item">
+									<strong>Maps:</strong><br/><br/>
+										<div id="VIPbite_RestaurantMapCanvas" style="width: 80%; height: 100px; margin: auto;"></div>
+									</li>
+								</ul>
+							</div>
+							<div class="tab-pane" id="VIPbite_RestaurantContact">
+								<ul class="list-group push-top">
+									<li class="list-group-item">
+										<strong>Phone Number:</strong> <p id="VIPbite_PhoneNumber">[--Number Goes Here--]</p>
+									</li>
+									<li class="list-group-item">
+										<strong>Service Hour:</strong><br/>
+										<p id="VIPbite_OperatingHour"></p>
+									</li>
+									<li class="list-group-item">
+										<strong>Restaurant Address:</strong><br/>
+										<p id="VIPbite_RestaurantAddress">[--Address Goes Here--]</p>
+									</li>
+									<li class="list-group-item">
+										<strong>Reservation Detail:</strong><br/>
+										<p id="VIPbite_ReservationInfo">[--Reservation Goes Here--]</p>
+									</li>
+									<li class="list-group-item">
+										<strong>Web Site:</strong> <p id="VIPbite_WebSite">[--website Goes Here--]</p>
+									</li>
+								</ul>
 							</div>
 						</div>
 					</div>

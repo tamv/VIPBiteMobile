@@ -36,6 +36,41 @@ VIPbiteAPI = function($, window, document) {
 		google.maps.event.trigger(map, "resize");
 	};
 
+	function initializeRestaurantMap(lat, lng, name)
+	{
+		var map_canvas = document.getElementById('VIPbite_RestaurantMapCanvas');
+
+		var featureOpts = [{
+		stylers: [	{ visibility: 'simplified' }, ] }, 
+								{ elementType: 'labels', stylers: [ { visibility: 'off' } ] } ];
+
+		var styledMapOptions = { name: 'VIPbite' };
+		var customMapType = new google.maps.StyledMapType(featureOpts, styledMapOptions);
+
+		var mapProperties = {
+			center:new google.maps.LatLng(lat,lng),
+			zoom:13,
+			panControl: false,
+			zoomControl: false,
+			mapTypeControl: false,
+			scaleControl: false,
+			streetViewControl: false,
+			overviewMapControl: false,
+			draggable: false,
+			scrollwheel: false,
+			mapTypeControlOptions: { mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'VIPbite'] },
+			mapTypeId: 'VIPbite'
+		};
+
+		map = new google.maps.Map(map_canvas,mapProperties);
+		map.mapTypes.set('VIPbite', customMapType);
+
+		var marker = new google.maps.Marker({
+											position: new google.maps.LatLng(lat,lng),
+											map: map,
+											title: name});
+	}
+
 	function registerNewUser()
 	{
 		var urlpart = $("#VIPbite_RegisterForm").serializeArray();
@@ -136,7 +171,7 @@ VIPbiteAPI = function($, window, document) {
 		});
 	};
 
-	function browseRestaurant()
+	function browseRestaurant(showOnMap)
 	{
 		$("#VIPbite_BrowseResult").html("");
 
@@ -149,10 +184,21 @@ VIPbiteAPI = function($, window, document) {
 			success: function(data) {
 				sessionStorage.setItem('ImageLink', data.originalUri);
 
-				for(var i = 0; i < data.response.length; i++)
+				if(showOnMap == false)
 				{
-					generateSearchResult(data.response[i], data.originalUri);
-					sessionStorage.setItem(data.response[i].name, JSON.stringify(data.response[i]));
+					for(var i = 0; i < data.response.length; i++)
+					{
+						generateSearchResult(data.response[i], data.originalUri);
+						sessionStorage.setItem(data.response[i].name, JSON.stringify(data.response[i]));
+					}
+				}
+				else
+				{
+					for(var i = 0; i < data.response.length; i++)
+					{
+						generateMapSearchResult(data.response[i]);
+						sessionStorage.setItem(data.response[i].name, JSON.stringify(data.response[i]));
+					}
 				}
 			}
 		});
@@ -246,6 +292,8 @@ VIPbiteAPI = function($, window, document) {
 					$("#VIPbite_WebSite").html(data.web);
 
 					$('.imageGal').nivoLightbox({ effect: 'fade' });
+
+					initializeRestaurantMap(data.lat, data.lng, data.name);
 				}
 			}
 		});
@@ -298,7 +346,7 @@ VIPbiteAPI = function($, window, document) {
 
 		var strContent = "<div class='row'>"
 											+"<div class='col-xs-2'><img src='" + imgurl + content.imageUrl + "'class='searchImg'/></div>"
-											+ "<div class='col-xs-8'>"
+											+ "<div class='col-xs-8 col-xs-push-1'>"
 												+ "<h3 id='restName' class='list-group-item-heading'>"
 												+ content.name + "</h3>"
 												+ "<p class='list-group-item-text'>"
@@ -325,7 +373,7 @@ VIPbiteAPI = function($, window, document) {
 		hrefElement.innerHTML = content.name;
 
 		var pElement = document.createElement("p");
-		pElement.innerHTML = content.search;
+		pElement.innerHTML = content.VIPBiteDeal;
 
 		var divElement = document.createElement("div")
 		divElement.appendChild(hrefElement);
@@ -336,7 +384,7 @@ VIPbiteAPI = function($, window, document) {
 		var marker = new google.maps.Marker({
 											position: myLatLng,
 											map: map,
-											title: 'Uluru (Ayers Rock)'});
+											title: content.name});
 		google.maps.event.addListener(marker, 'click', function() { infowindow.open(map,marker); });
 	};
 

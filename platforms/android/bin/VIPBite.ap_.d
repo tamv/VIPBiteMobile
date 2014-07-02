@@ -75,8 +75,10 @@
 /Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/content/image/sub-header.jpg \
 /Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/content/image/swype \
 /Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/content/image/trans.jpg \
+/Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/content/image/twitter.png \
 /Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/content/image/una.jpg \
 /Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/content/image/Untitled-5.jpg \
+/Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/content/image/urbanspoon.png \
 /Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/content/image/nav/account.png \
 /Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/content/image/nav/account@2x.png \
 /Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/content/image/nav/browse.png \
