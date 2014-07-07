@@ -24,7 +24,7 @@
 		<script type="text/javascript" src="script/custom.js"></script>
 		<script type="text/javascript" src="script/bootstrap.min.js"></script>
 		<script type="text/javascript" src="script/VIPbite_API.js"></script>
-   	<script type="text/javascript" src="script/retina.js"></script> 
+		<script type="text/javascript" src="cordova.js"></script>
 	</head>
 
 	<body id="VIPbiteMobile_BodyContent">
@@ -134,8 +134,10 @@
 				<img src="content/image/nav/more.png"/><en class="under-icon-text">More</en>
 			</a>
 		</div>
-		
-		<!-- Page's JavaScript section used for handle user interaction -->
+	</body>
+	
+	<script type="text/javascript" src="script/retina.js"></script>
+
 	<script>
 		$(window).bind("load", function(){
 			var user = JSON.parse(sessionStorage.getItem("UserLoginId"));

@@ -301,7 +301,6 @@ VIPbiteAPI = function($, window, document) {
 
 	function requestLogOut()
 	{
-		alert("lol-kk");
 		sessionStorage.clear();
 		location.replace("index.html");
 	}

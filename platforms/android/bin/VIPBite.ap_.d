@@ -23,6 +23,7 @@
 /Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/index.html \
 /Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/map.html \
 /Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/more.html \
+/Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/plugins \
 /Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/register.html \
 /Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/renew.html \
 /Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/restaurant.html \
@@ -102,10 +103,15 @@
 /Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/content/image/nav/more@2x.png \
 /Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/content/image/nav/nav-bg.png \
 /Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/content/image/slider/1.jpg \
+/Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/content/image/slider/1@2x.jpg \
+/Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/content/image/slider/2 copy.jpg \
 /Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/content/image/slider/2.jpg \
+/Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/content/image/slider/3 copy.jpg \
 /Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/content/image/slider/3.jpg \
+/Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/content/image/slider/4 copy.jpg \
 /Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/content/image/slider/4.jpg \
 /Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/content/image/slider/header.jpg \
+/Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/content/image/slider/header@2x.jpg \
 /Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/content/image/swype/error.gif \
 /Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/content/image/swype/full \
 /Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/content/image/swype/icons.png \
@@ -198,6 +204,9 @@
 /Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/images/thumb/018.jpg \
 /Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/images/thumb/019.jpg \
 /Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/images/thumb/020.jpg \
+/Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/plugins/org.apache.cordova.splashscreen \
+/Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/plugins/org.apache.cordova.splashscreen/www \
+/Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/plugins/org.apache.cordova.splashscreen/www/splashscreen.js \
 /Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/script/add2home.js \
 /Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/script/bootstrap-image-gallery.min.js \
 /Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/script/bootstrap.js \
@@ -211,6 +220,7 @@
 /Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/script/jquery.ioslist-1.0.1.src.js \
 /Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/script/jquery.js \
 /Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/script/nivo-lightbox.js \
+/Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/script/retina.js \
 /Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/script/simple-inheritance.min.js \
 /Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/script/VIPbite_API.js \
 /Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/bin/AndroidManifest.xml \
