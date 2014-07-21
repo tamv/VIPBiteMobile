@@ -22,7 +22,7 @@ package com.vipbite.mobile;
 import android.os.Bundle;
 import org.apache.cordova.*;
 
-public class VIPBite extends CordovaActivity 
+public class VIPbite extends CordovaActivity 
 {
     @Override
     public void onCreate(Bundle savedInstanceState)

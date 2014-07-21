@@ -1,4 +1,4 @@
-/Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/bin/VIPBite.ap_ \
+/Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/bin/VIPbite.ap_ \
  : /Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/res/drawable/icon.png \
 /Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/res/drawable-hdpi/icon.png \
 /Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/res/drawable-ldpi/icon.png \
@@ -26,6 +26,7 @@
 /Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/plugins \
 /Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/register.html \
 /Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/renew.html \
+/Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/res \
 /Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/restaurant.html \
 /Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/script \
 /Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/content/fonts \
@@ -207,6 +208,22 @@
 /Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/plugins/org.apache.cordova.splashscreen \
 /Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/plugins/org.apache.cordova.splashscreen/www \
 /Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/plugins/org.apache.cordova.splashscreen/www/splashscreen.js \
+/Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/res/android \
+/Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/res/ios \
+/Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/res/ios/icon-40.png \
+/Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/res/ios/icon-40@2x.png \
+/Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/res/ios/icon-50.png \
+/Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/res/ios/icon-50@2x.png \
+/Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/res/ios/icon-60.png \
+/Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/res/ios/icon-60@2x.png \
+/Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/res/ios/icon-72.png \
+/Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/res/ios/icon-72@2x.png \
+/Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/res/ios/icon-76.png \
+/Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/res/ios/icon-76@2x.png \
+/Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/res/ios/icon-small.png \
+/Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/res/ios/icon-small@2x.png \
+/Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/res/ios/icon.png \
+/Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/res/ios/icon@2x.png \
 /Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/script/add2home.js \
 /Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/script/bootstrap-image-gallery.min.js \
 /Users/tamanonvirulhakieat/FREELANCE_DEPOT/VIPBite/VIPBiteMobile/platforms/android/assets/www/script/bootstrap.js \

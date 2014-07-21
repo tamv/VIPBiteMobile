@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>VIPbite</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script type="text/javascript" src="//use.typekit.net/zrr2vfn.js"></script>
+		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+		<!-- Importing .css file -->
+		<link href="css/bootstrap.min.css"		rel="stylesheet" type="text/css">
+		<link href="css/style.css"						rel="stylesheet" type="text/css">
+		<link href="css/buttons.css"					rel="stylesheet" type="text/css">
+		<link href="css/type.css"						rel="stylesheet" type="text/css">
+		<link href="css/add2home.css"				rel="stylesheet" type="text/css">
+		<link href="css/flexslider.css"			rel="stylesheet" type="text/css">
+		<link href="css/photoswipe.css"			rel="stylesheet" type="text/css">
+
+		<!-- Importing .js file -->
+		<script type="text/javascript" src="script/jquery.js"></script>
+		<script type="text/javascript" src="script/jquery.flexslider-min.js"/></script>
+		<script type="text/javascript" src="script/jquery.nivo.slider.pack.js"></script>
+		<script type="text/javascript" src="script/custom.js"></script>
+		<script type="text/javascript" src="script/bootstrap.min.js"></script>
+		<script type="text/javascript" src="script/VIPbite_API.js"></script>
+		<script type="text/javascript" src="cordova.js"></script>
+	</head>
+
+	<body id="VIPbiteMobile_BodyContent">
+		<!-- Static Header -->
+		<div id="VIPbiteMobile_StaticHeader" class="mainHeader">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12 center-align"><img src="content/image/logo.png" /></div>
+				</div>
+			</div>
+		</div>
+		<!-- End Header -->
+
+		<!-- Page Content -->
+		<div id="VIPbite_BodyContent">
+			<div class="contentWrap">
+				<div class="container">
+					<div class="row"><h1 id="VIPbite_RegisterHeader" class="smallHead">Renew</h1></div>
+
+					<div class="row">
+						<div class="tagline">
+							<div class="col-sm-12">
+								<section class="registerForm">
+									<h1 id="feedback_content" style="color: red; display:none;"></h1>
+									<form id="VIPbite_RenewForm">
+										<h4 id="renewFor"></h4>
+										<h4 class="">Payment &amp; Billing Information</h4>
+										<div class="inputLabel">Length:</div>
+										<div class="clear"/>
+										<input class="form-radio"
+											id="memberType_6months" name="memberType" type="radio" value="6months" />
+										<label for="memberType_6months">6 Months &nbsp <text style="font-size: 10px">($69.99)</label>
+										<input class="form-radio"
+											id="memberType_12months" class="form-radio" name="memberType" type="radio" value="12months" />
+										<label for="memberType_12months">12 Months &nbsp <text style="font-size: 10px">($99.99)</label>
+										<input class="registrationInput"
+											id="noc_firstname" maxlength="30" name="noc_firstname" 
+											placeholder="First Name" size="30" type="text" />
+										<input class="registrationInput"
+											id="noc_lastname" maxlength="30" name="noc_lastname"
+											placeholder="Last Name" size="30" type="text" />
+										<div class="inputLabel">Select Card:</div>
+										<select class="registrationInput" id="cardtype" name="cardtype">
+											<option value="VISA">VISA</option>
+											<option value="MASTERCARD">MASTERCARD</option>
+											<option value="AMERICANEXP">AMERICANEXP</option>
+										</select>
+										<input class="registrationInput"
+											id="cardno" maxlength="20" name="cardno" size="30" type="text"
+											placeholder="Card Number" />
+										<input class="registrationInput"
+											id="exp_month" maxlength="2" name="exp_month"
+											placeholder="MM" size="2" type="text" />
+										<input class="registrationInput"
+											id="exp_year" maxlength="4" name="exp_year"
+											placeholder="YYYY" size="4" type="text" />
+										<input class="registrationInput"
+											id="cvv" maxlength="3" name="cvv" size="30" type="password"
+											placeholder="CVV" />
+										<input class="registrationInput"
+											id="unitno" maxlength="60" name="unitno" size="30" type="text"
+											placeholder="Unit Number" />
+										<input class="registrationInput"
+											id="address" maxlength="60" name="address" size="30" type="text"
+											placeholder="Address" />
+										<input class="registrationInput"
+											id="city" maxlength="20" name="city" size="30" type="text"
+											placeholder="City" />
+										<div class="inputLabel">Select Province:</div>
+										<select class="registrationInput" id="prov" name="prov">
+											<option value="AB">AB</option>
+											<option value="BC">BC</option>
+										</select>
+										<input class="registrationInput"
+											id="postal" maxlength="7" name="postal" size="30" type="text"
+											placeholder="Postal Code" />
+										<input class="registrationInput"
+											id="phone" maxlength="11" name="phone" size="30" type="text"
+											placeholder="Phone Number" />
+										<input id="RenewFormButton" class="button" name="VIPbite_SubmitRenewalButton" type="button" value="RENEW VIPBITE MEMBERSHIP!"
+										onclick="VIPbiteAPI.RenewUser()"/>
+									</form>
+								</section>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Content -->
+
+		<!-- Static Footer -->
+		<div id="VIPbite_NavigationMenu" class="navigation">
+			<a href="index.html">
+				<img src="content/image/nav/home.png"/><en class="under-icon-text">Home</en>
+			</a>
+			<a href="browse.html">
+				<img src="content/image/nav/browse.png"/><en class="under-icon-text">Browse</en>
+			</a>
+			<a href="map.html">
+				<img src="content/image/nav/map.png"/><en class="under-icon-text">Map</en>
+			</a>
+			<a href="account.html">
+				<img src="content/image/nav/account.png"/><en class="under-icon-text">My VipBite</en>
+			</a>
+			<a href="more.html">
+				<img src="content/image/nav/more.png"/><en class="under-icon-text">More</en>
+			</a>
+		</div>
+	</body>
+	
+	<script type="text/javascript" src="script/retina.js"></script>
+
+	<script>
+		$(window).bind("load", function(){
+			var user = JSON.parse(sessionStorage.getItem("UserLoginId"));
+			var renewForStr = "For :    " + user["firstname"] + "    " + user["lastname"] + "<br/>"
+											+ "Email : " + user["userEmail"];
+			$("#renewFor").html(renewForStr);
+		});
+	</script>
+	</body>
+</html>
