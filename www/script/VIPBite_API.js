@@ -139,7 +139,7 @@ VIPbiteAPI = function($, window, document) {
 		}
 		else
 		{
-			$("#VIPbite_ValidUserName").html(isLogin.firstName + "&nbsp"+ isLogin.lastName);
+			$("#VIPbite_ValidUserName").html(isLogin.firstname + "&nbsp"+ isLogin.lastname);
 			$("#VIPbite_UserExpDate").html(isLogin.expDate.split("T")[0]);
 
 			if(new Date(isLogin.expDate) > new Date())

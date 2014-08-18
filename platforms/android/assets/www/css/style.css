@@ -545,7 +545,8 @@ select{
 }
 
 .vipLabel{
-	color:#333;
+	color:#6ab7e3;
+	font-weight: bolder;
 	background: #fff;
 	padding:5px;
 	margin-right:5px;

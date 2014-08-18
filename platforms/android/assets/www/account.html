@@ -50,7 +50,9 @@
 								<input id="VIPbite_LoginPwd" type="password" class="input password" placeholder="Password"/>
 								<span class="pass-icon"></span>
 								<input name="VIPbite_LoginButton" type="button" class="button" value="Login" onclick="VIPbiteAPI.RequestLogin()"/>
-								<a href="register.html" class="register">Become a VIPbite member!</a>
+								<p style="color: white; margin-left: 15px;"> ~ Or ~</p>
+								<input type="button" class="button" style="margin-top: 5px;" value="Become a VIPbite member!"
+								onclick="window.location.href='register.html'"/>
 							</div>
 						</div>
 					</div>
@@ -62,9 +64,9 @@
 							<div class="list-group-item center-text">
 								<h1 id="VIPbite_ValidUserName"></h1>
 								<p>
-									Your account is valid until:<br/>
+									Your account is valid until:
 									<span id="VIPbite_UserExpDate" class="blueTxt"></span>
-								</p>
+								</p><br/>
 								<img src="content/image/check-box.png" /><br/><br/>
 								<p>
 									Show this app at participating restaurants and start saving today!
@@ -83,9 +85,9 @@
 							<div class="list-group-item center-text">
 								<h1 id="VIPbite_ValidUserName"></h1>
 								<p>
-									Your account is expired on:<br/>
+									Your account is expired on:
 									<span id="VIPbite_UserExpDate" class="redTxt"></span>
-								</p>
+								</p><br/>
 								<img src="content/image/red-x.png" /><br/><br/>
 								<p>
 									Renew your VIPbite Membership and start saving again on premier dining.
