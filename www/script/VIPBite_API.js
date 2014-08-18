@@ -140,7 +140,7 @@ VIPbiteAPI = function($, window, document) {
 		else
 		{
 			$("#VIPbite_ValidUserName").html(isLogin.firstName + "&nbsp"+ isLogin.lastName);
-			$("#VIPbite_UserExpDate").html(isLogin.expDate);
+			$("#VIPbite_UserExpDate").html(isLogin.expDate.split("T")[0]);
 
 			if(new Date(isLogin.expDate) > new Date())
 			{
@@ -255,6 +255,9 @@ VIPbiteAPI = function($, window, document) {
 					$("#VIPbite_RestaurantName").html(data.name);
 					document.getElementById("VIPbite_LogoImg").src = (imageLink + "/image/restaurant logo/" + data.logo);
 
+					initializeRestaurantMap(data.lat, data.lng, data.name);
+
+
 					for(var i = 0; i < data.images.length; i++)
 					{
 						var divElem = document.createElement("div");
@@ -277,6 +280,8 @@ VIPbiteAPI = function($, window, document) {
 						$("#VIPbiteGallary").append(divElem);
 					};
 
+					$("#why_we_loveheader").html("Why we love " + data.name + ":");
+					$("#VIPbite_WhyWeLoveComment").html(data.comment);
 					$("#VIPbite_DealContent").html(data.dealDetail);
 					$("#VIPbite_UrbanspoonContent").html(data.rate);
 					$("#VIPbite_CuisineType").html(data.cuisineType);
@@ -292,8 +297,6 @@ VIPbiteAPI = function($, window, document) {
 					$("#VIPbite_WebSite").html(data.web);
 
 					$('.imageGal').nivoLightbox({ effect: 'fade' });
-
-					initializeRestaurantMap(data.lat, data.lng, data.name);
 				}
 			}
 		});
@@ -355,8 +358,8 @@ VIPbiteAPI = function($, window, document) {
 											+ " </div>"
 											+ "<div class='col-xs-12'>"
 												+ "<div class='special'> <span class='vipLabel'>"
-													+ "<i class='fa fa-cutlery'> </i> VIPbite Deal: </span>"
-													+ "Two For One Pizzas Every Friday morning"
+													+ "<i class='fa fa-cutlery'></i>VIPbite Treatment: </span>"
+													+ content.VIPBiteDeal
 												+ "</div> "
 											+ "</div>"
 										+ "</div>";

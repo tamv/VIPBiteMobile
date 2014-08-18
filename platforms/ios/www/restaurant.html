@@ -63,16 +63,32 @@
 				</div>
 				<div class="row" style="margin-top:20px;">
 					<div class="col-sm-12">
-						<div id="TitleTabs" class="row col-sm-12 text-center">
+						<div id="TitleTabs" class="row text-center">
 							<ul id="TitleTabsContent" class="nav nav-pills" data-tabs="tabs">
-								<li class="active"><a href="#VIPbite_RestaurantInfo" data-toggle="tab">Details</a></li>
-								<li><a href="#VIPbite_RestaurantDeal" data-toggle="tab">VIPbite Deal</a></li>
-								<li><a href="#VIPbite_RestaurantContact" data-toggle="tab">Contact</a></li>
+								<li class="active" style="margin: 0px;"><a href="#VIPbite_RestaurantInfo" data-toggle="tab">Details</a></li>
+								<li style="margin: 0px;"><a href="#VIPbite_RestaurantDeal" data-toggle="tab">VIPbite Deal</a></li>
+								<li style="margin: 0px;"><a href="#VIPbite_RestaurantContact" data-toggle="tab">Contact</a></li>
+								<li style="margin: 0px;"><a href="#VIPbite_MapLocation" data-toggle="tab" id="test">Map</a></li>
 							</ul>
 						</div>
 
 						<!-- Tab panes -->
 						<div class="tab-content row col-sm-12">
+							<div class="tab-pane" id="VIPbite_RestaurantInfo">
+								<ul class="list-group push-top">
+									<li class="list-group-item">
+										<strong>Cuisine Type:</strong> <p id="VIPbite_CuisineType">Cuisine Type</p>
+									</li>
+									<li class="list-group-item">
+										<strong>Description:</strong><br/>
+										<p id="VIPbite_RestaurantDescription">Description Content</p>
+									</li>
+									<li class="list-group-item">
+										<strong id="why_we_loveheader"></strong><br/>
+										<p id="VIPbite_WhyWeLoveComment"></p>
+									</li>
+								</ul>
+							</div>
 							<div class="tab-pane" id="VIPbite_RestaurantDeal">
 								<ul class="list-group push-top">
 									<li class="list-group-item">
@@ -86,21 +102,6 @@
 										</a>
 										<img src="content/image/urbanspoon.png" widht="30px" height="30px;" style="margin-left: 20px;"/>
 										<p id="VIPbite_UrbanspoonContent">[--Urbanspoon Rating Goes Here--]</p>
-									</li>
-								</ul>
-							</div>
-							<div class="tab-pane active" id="VIPbite_RestaurantInfo">
-								<ul class="list-group push-top">
-									<li class="list-group-item">
-										<strong>Cuisine Type:</strong> <p id="VIPbite_CuisineType">Cuisine Type</p>
-									</li>
-									<li class="list-group-item">
-										<strong>Description:</strong><br/>
-										<p id="VIPbite_RestaurantDescription">Description Content</p>
-									</li>
-									<li class="list-group-item">
-									<strong>Maps:</strong><br/><br/>
-										<div id="VIPbite_RestaurantMapCanvas" style="width: 80%; height: 100px; margin: auto;"></div>
 									</li>
 								</ul>
 							</div>
@@ -125,6 +126,15 @@
 										<strong>Web Site:</strong> <p id="VIPbite_WebSite">[--website Goes Here--]</p>
 									</li>
 								</ul>
+							</div>
+							<div class="tab-pane" id="VIPbite_MapLocation">
+								<li class="list-group-item">
+									<input type="hidden" id="hidInput_latitude"/>
+									<input type="hidden" id="hidInput_longitude"/>
+									<input type="hidden" id="hidInput_name"/>
+									<strong>Maps:</strong><br/><br/>
+										<div id="VIPbite_RestaurantMapCanvas" style="width: 80%; height: 200px; margin: auto;"></div>
+									</li>
 							</div>
 						</div>
 					</div>
@@ -160,6 +170,10 @@
 	<script type="text/javascript">
 		$(document).ready(function() {
 			VIPbiteAPI.GetRestaurantInfo();
+			$("#VIPbite_RestaurantInfo").addClass("active");
+			$("#test").on('click', function() {
+				VIPbiteAPI.GetRestaurantInfo();
+			});
 		});
 	</script>
 </html>
